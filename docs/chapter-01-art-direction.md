@@ -1,8 +1,8 @@
 # Chapter 1 — Core Architecture
 
-Source: [the authored architecture request](core-architecture-source.md). This begins an independent architecture tutorial series. Chapter 1 contains eight actual URL slides: the server and transfer in slides 1–4, request types in slide 5, messaging in slide 6, an editable coins-with-data example in slide 7, and a Ping/Pong round trip in slide 8. Keep ordinary slide navigation, with no phase controls.
+Source: [the authored architecture request](core-architecture-source.md). This begins an independent architecture tutorial series. Chapter 1 contains ten actual URL slides: the server and transfer in slides 1–4, request types in slide 5, messaging in slide 6, an editable coins-with-data example in slide 7, a Ping/Pong round trip in slide 8, and Bacoin Core with a guessing game in slides 9–10. Keep ordinary slide navigation, with no phase controls.
 
-## Eight-slide outline
+## Ten-slide outline
 
 | Slide | Visual id                    | Presenter title              | Main idea                                                                                  |
 | ----- | ---------------------------- | ---------------------------- | ------------------------------------------------------------------------------------------ |
@@ -14,14 +14,16 @@ Source: [the authored architecture request](core-architecture-source.md). This b
 | 6     | `architecture-messaging`     | A conversation through Core. | Bucky sends through Core; Ty’s reply begins typing after two seconds, then waits for Send. |
 | 7     | `architecture-coins-data`    | A coin and a message.        | Edit an amount and message; Core records the payment before Ty receives both.              |
 | 8     | `architecture-ping-pong`     | Ping. Pong.                  | Start the phone timer; the laptop replies automatically, and Pong’s return stops it.       |
+| 9     | `architecture-bacoin-core`   | Bacoin Core.                 | Introduce the next currency’s server alone, with its Bacoin emblem.                        |
+| 10    | `architecture-guessing-game` | Guess a number.              | Send a one-coin guess; the app returns either a ten-coin prize or a data-only loss.        |
 
 ## Visual language and layout
 
-Use large, editable native graphics: a server labeled **Bonsai Core**, its balance table, connected phones, coin symbols, requests, and messages. No generated artwork is needed, so the metadata has no artwork briefs. Any reused human portrait must remain an established generated image, never an SVG face.
+Use large, editable native graphics: a server labeled **Bonsai Core** on slides 1–8 or **Bacoin Core** on slides 9–10, its balance table, connected phones, coin symbols, requests, and messages. No generated artwork is needed, so the metadata has no artwork briefs. Any reused human portrait must remain an established generated image, never an SVG face.
 
-The server style follows the user’s optional [first reference](/Users/bucky/Downloads/server.jpg) and [second reference](/Users/bucky/Downloads/server2.jpg), neither of which is an app asset or build dependency: crisp dimensional/isometric construction, dark navy and blue faces, clearly defined rack details, and restrained indicator lights. Build original native vector artwork with these qualities. Give the phones a coherent dimensional finish while keeping their screens flat and readable. Place a Bonsai Coin emblem on the server’s upper-right side panel, aligned with its isometric perspective.
+The server style follows the user’s optional [first reference](/Users/bucky/Downloads/server.jpg) and [second reference](/Users/bucky/Downloads/server2.jpg), neither of which is an app asset or build dependency: crisp dimensional/isometric construction, dark navy and blue faces, clearly defined rack details, and restrained indicator lights. Build original native vector artwork with these qualities. Give the phones a coherent dimensional finish while keeping their screens flat and readable. Place the corresponding Bonsai or Bacoin coin emblem on the server’s upper-right side panel, aligned with its isometric perspective.
 
-Place every **Bonsai Core** label above its server, wherever a server appears. Balance tables sit to the right of their server. Show the starting 100 through the balance table; remove the standalone **100 minted** caption and its adjacent coin from every slide.
+Place each **Bonsai Core** or **Bacoin Core** label above its corresponding server. Balance tables sit to the right of their server. Show the starting 100 through the balance table; remove the standalone **100 minted** caption and its adjacent coin from every slide.
 
 Whenever a phone is connected, position Core at the top center and Bucky’s phone at the bottom left. Connect the top of Bucky’s phone to the left side of Core with a gently curved wire. Connection wires have no arrowheads or outside **Connected** labels. Slide 3 instead places a green checkmark and green **Connected** text inside the phone, replacing its coin. Align traveling request graphics with this geometry. On slides 6 and 7, Ty’s phone sits at the bottom right. Vertically center each whole composition so the whitespace above the Bonsai Core label balances the whitespace below the Bucky/Ty names, preserving scale and all relative positions, wires, and packet paths.
 
@@ -69,15 +71,34 @@ Allow one round trip per demonstration. Pause must hold the moving request and e
 
 The timer represents illustrative elapsed presentation time; no network request or benchmark runs. Keep that explanation in notes/documentation, not in an on-canvas disclaimer.
 
+## Slide 9: Bacoin Core alone
+
+Use the same scale, placement, and standalone server composition as slide 1. Change the label to **Bacoin Core** and use the Bacoin coin/emblem. Spell it **Bacoin** throughout. No phone, laptop, table, request, or game UI appears here. Bacoin is the default currency/Core for subsequent new examples unless the author specifies otherwise; leave the first eight slides on Bonsai.
+
+## Slide 10: paid guess and app response
+
+Follow slide 8’s balanced composition: **Bacoin Core** top center, Bucky’s phone bottom left, and a laptop labeled **Guessing game** bottom right. Place the balance table to Core’s right, with **123 / Bucky / 100** and **789 / App / 100**. Use the same dimensional device finish, readable flat screens, curved wires, and aligned packet paths. The phone has fixed **Amount / 1**, an editable integer guess from **1–10**, default **1**, and a keyboard-accessible **Send** button. The idle laptop says **Pick a number**, shows the range **1–10**, and displays a **10 Bacoin** prize.
+
+Start with no request or result. Send carries one Bacoin plus the submitted guess through **phone → Core → laptop**. At the first Core arrival, save **Bucky 99 / App 101**. The result cannot be chosen or shown before the request reaches the laptop. At laptop receipt, immediately generate the app’s reply:
+
+| Submitted guess | Reply                      | Records when reply reaches Core   | Phone display after reply arrives |
+| --------------- | -------------------------- | --------------------------------- | --------------------------------- |
+| 5               | **You win**, amount **10** | **Bucky 109 / App 91**            | **You win** and Bacoin **+10**    |
+| 1–4 or 6–10     | **You lose**, amount **0** | **Bucky 99 / App 101**, unchanged | **You lose**, no coin indicator   |
+
+The reply follows **laptop → Core → phone**. Keep each of the four normal-motion legs approximately **1400 ms**. The phone’s result and receipt wait for its arrival, even though any returned coins are already recorded at Core. The App pays the ten-coin winning reply from its balance. The losing reply carries data only and does not credit Bucky.
+
+Use a fixed winning number of **5** to make both demonstrations reproducible. Keep that rule, the fact this is a local illustration, and omitted fees in presenter notes/documentation only; the idle canvas must not disclose the fixed answer. Permit one round per demonstration, with no automatic restart. Replay, reentry, and reload cancel outstanding work and restore **Bucky 100 / App 100**, guess **1**, and the idle laptop. Pause holds request travel. Reduced motion waits for Send and then shows the same selected outcome immediately, without changing its accounting or result.
+
 ## Source distinctions kept outside the canvas
 
-The requested arithmetic deliberately omits transaction fees: **100 − 1 = 99**, with Ty receiving **1**. Preserve those figures for slide 4. Slide 7 continues from **99 / 1** and defaults to **98 / 2**. With an edited amount, its records become **99 − amount** and **1 + amount**; the receipt remains **+amount**, never Ty’s total balance. The actual Core implementation charges its configured fee in addition to the transfer amount; a data-only block has a zero recipient amount but still incurs the configured transaction fee. Omitting coin accounting from the messaging view does not imply free requests. Mention these simplifications briefly in presenter notes rather than adding fee labels to the diagrams.
+The requested arithmetic deliberately omits transaction fees: **100 − 1 = 99**, with Ty receiving **1**. Preserve those figures for slide 4. Slide 7 continues from **99 / 1** and defaults to **98 / 2**. With an edited amount, its records become **99 − amount** and **1 + amount**; the receipt remains **+amount**, never Ty’s total balance. Slide 10 starts a separate Bacoin example at **100 / 100**; its one-coin request yields **99 / 101**, followed by **109 / 91** for a ten-coin winning reply or unchanged **99 / 101** for a data-only loss. These figures also omit fees on both accepted requests. The actual Core implementation charges its configured fee in addition to the transfer amount; a data-only block has a zero recipient amount but still incurs the configured transaction fee. Omitting coin accounting from the messaging view does not imply free requests. Mention these simplifications briefly in presenter notes rather than adding fee labels to the diagrams.
 
-Account labels **123** and **456** are readable teaching examples, not usable Core account numbers. The supplied model uses 64-character hexadecimal account numbers. Names identify the people for this introduction; account numbers identify the records.
+Account labels **123**, **456**, and **789** are readable teaching examples, not usable Core account numbers. The supplied model uses 64-character hexadecimal account numbers. Names identify the people for this introduction; account numbers identify the records.
 
 “Mint 100” establishes the illustrative starting balance. It must not imply that an ordinary connected wallet can arbitrarily raise its balance or that connecting mints coins. The supplied administration tools can create account records and set starting balances; this chapter need not introduce that setup interface.
 
-Core checks and saves the block and balances before sending updates to connected apps. The receiving application interprets and displays the payload. Payment submission and authenticated live connections are distinct channels in the supplied implementation; the simple diagram does not assert that ordinary payments are submitted over the live connection. Keep these distinctions while using the requested eight-slide scope.
+Core checks and saves the block and balances before sending updates to connected apps. The receiving application interprets and displays the payload. Payment submission and authenticated live connections are distinct channels in the supplied implementation; the simple diagram does not assert that ordinary payments are submitted over the live connection. Keep these distinctions while using the requested ten-slide scope.
 
 The following optional local author references were used to check these distinctions. This document and the authored request contain the necessary teaching rules; building, running, and testing this app do not require these sibling repositories or their files:
 
@@ -89,7 +110,7 @@ The following optional local author references were used to check these distinct
 
 ## Controls and review
 
-Use ordinary chapter and slide navigation for all eight slides, with no phase controls. Preserve existing navigation shortcuts. Pause/resume and Replay stay outside the canvas; Replay resets the current slide without changing its URL. Slides 4, 6, 7, and 8 wait for their Send or Send Ping button in both normal and reduced motion. Never advance slides on a timer.
+Use ordinary chapter and slide navigation for all ten slides, with no phase controls. Preserve existing navigation shortcuts. Pause/resume and Replay stay outside the canvas; Replay resets the current slide without changing its URL. Slides 4, 6, 7, 8, and 10 wait for their Send or Send Ping button in both normal and reduced motion. Never advance slides on a timer.
 
 Inspect every route at desktop and mobile sizes in normal and reduced motion. Verify server-only slide 1, Bucky-only minting on slide 2, the green status inside slide 3’s phone, and slide 4 waiting until pointer or keyboard Send activation. Check one transfer despite repeated activation, request arrival before balance changes and Ty’s row, and reset behavior. Verify the comparison order Coins only / Data only / Coins + data, To Ty on each card, exact examples, Payload field labels, no Data/Empty row in Coins only, and no amount in Data only. Test the initial message fields, immediate clearing on Send, Bucky’s request path, Ty’s received bubble only on arrival, and reply typing beginning exactly two seconds later without sending. Verify the roughly 160 ms character cadence and that Ty’s Send remains disabled until the complete reply is visible. Verify Ty’s manual Send clears his field, sends the reply through Core, and reveals Bucky’s received bubble only on arrival. The final state must have two incoming bubbles and two empty fields, with no further send until a reset. Check pause/resume during both the delay and partial typing, reduced-motion timing, and cancellation/reset on Replay, reentry, and reload. Confirm Bucky/Ty labels remain beneath the phones, the read-only To inputs show the opposite recipient above Message, and no contact-name header or Amount field appears.
 
@@ -97,4 +118,6 @@ For slide 7, verify the default 99/1 → 98/2 transfer and an edited valid amoun
 
 For slide 8, verify idle 0.00 s and no auto-start, keyboard/pointer Send Ping, all four roughly 1400 ms travel legs, automatic Pong only after laptop receipt, and the timer stopping only at phone receipt. Pause mid-route and confirm both the request and timer hold. Check one activation per demonstration, replay/reentry/reload cancellation, and reduced-motion completion only after a click with 0.00 s. Inspect balanced vertical margins and the absence of account/amount/table/JSON/Ty elements.
 
-Across all slides, check text fit and canvas bounds, labels above servers, tables to their right, no standalone mint caption or adjacent coin, the server’s perspective-aligned Bonsai Coin emblem, curved wire endpoints, and no outside connection-status labels or arrowheads.
+For slide 9, compare the standalone layout with slide 1 and verify the Bacoin spelling and emblem. For slide 10, test default guess 1 and winning guess 5, plus invalid/out-of-range/noninteger input. Verify the initial 100/100, first Core change to 99/101, laptop-only decision, reply-Core win change to 109/91, unchanged loss balances, and phone-only result/coin reveal. Check no coin indicator on loss, no early result, repeated-Send protection, pause on each leg, reduced motion, and all resets returning to guess 1 and 100/100. Keep the fixed answer off the idle canvas.
+
+Across all slides, check text fit and canvas bounds, labels above servers, tables to their right, no standalone mint caption or adjacent coin, the server’s perspective-aligned currency emblem, curved wire endpoints, and no outside connection-status labels or arrowheads.

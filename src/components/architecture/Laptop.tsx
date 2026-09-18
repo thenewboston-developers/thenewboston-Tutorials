@@ -4,9 +4,11 @@ import './laptop.css'
 export function Laptop({
   children,
   className = '',
+  name = 'Ping-pong app',
 }: {
   children: ReactNode
   className?: string
+  name?: string
 }) {
   const id = useId()
   const bezel = `${id}-bezel`
@@ -167,7 +169,7 @@ export function Laptop({
         </svg>
         <div className="architecture-laptop-screen">{children}</div>
       </div>
-      <strong className="architecture-laptop-name">Ping-pong app</strong>
+      <strong className="architecture-laptop-name">{name}</strong>
     </div>
   )
 }

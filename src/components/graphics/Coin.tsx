@@ -1,5 +1,6 @@
 import { useId } from 'react'
 import { BonsaiArtwork } from './BonsaiArtwork'
+import { BacoinArtwork } from './BacoinArtwork'
 import './coin-artwork.css'
 
 function CoinSprig({ flip = false }: { flip?: boolean }) {
@@ -29,13 +30,13 @@ function CoinSprig({ flip = false }: { flip?: boolean }) {
   )
 }
 
-/** Text-free Bonsai Coin with the original struck-metal rim and tree motif. */
+/** Text-free coins with a shared struck-metal rim and distinct currency motifs. */
 export function Coin({
   kind,
   size = 180,
   label,
 }: {
-  kind: 'bonsai'
+  kind: 'bonsai' | 'bacoin'
   size?: number
   label?: string
 }) {
@@ -143,6 +144,11 @@ export function Coin({
             <CoinSprig flip />
             <path d="m124 207 4-5 4 5-4 5Z" fill={ink} opacity=".55" />
           </>
+        )}
+        {kind === 'bacoin' && (
+          <g transform="translate(31 27)">
+            <BacoinArtwork size={194} />
+          </g>
         )}
       </svg>
     </div>

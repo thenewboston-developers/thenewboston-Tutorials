@@ -3,8 +3,10 @@ import { Coin } from '../graphics/Coin'
 
 export function ServerIllustration({
   connected = false,
+  currency = 'bonsai',
 }: {
   connected?: boolean
+  currency?: 'bonsai' | 'bacoin'
 }) {
   const id = useId()
   const front = `${id}-front`
@@ -159,7 +161,7 @@ export function ServerIllustration({
         />
         <path d="M25 29h96v158H25Z" fill="#1b2e47" />
         <foreignObject x="27" y="39" width="92" height="92">
-          <Coin kind="bonsai" size={92} />
+          <Coin kind={currency} size={92} />
         </foreignObject>
         <g stroke="#0d1c30" strokeWidth="3.5" strokeLinecap="round">
           {Array.from({ length: 6 }, (_, index) => (

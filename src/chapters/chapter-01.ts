@@ -5,7 +5,7 @@ export const chapter01: Chapter = {
   number: 1,
   title: 'Core Architecture',
   description:
-    'An independent eight-slide architecture introduction: Core, starting balances, a connected phone, a transfer, request types, messaging, coins with data, and Ping/Pong.',
+    'An independent ten-slide architecture introduction: Core, balances, transfers, request types, messaging, Ping/Pong, and a Bacoin guessing game.',
   sourcePath: 'docs/core-architecture-source.md',
   slides: [
     {
@@ -109,6 +109,31 @@ export const chapter01: Chapter = {
         'This timer follows the illustrative presentation; it makes no network request and is not a benchmark.',
       ],
       visual: 'architecture-ping-pong',
+    },
+    {
+      id: 'architecture-bacoin-core',
+      title: 'Bacoin Core.',
+      sentence:
+        'Bacoin Core introduces the currency server used by the next application example.',
+      talkingPoints: [
+        'This server is Bacoin Core, identified by its name and Bacoin coin emblem.',
+        'Begin with the server alone before introducing the phone, application, and their balances.',
+        'The next example uses this Core server to carry a paid guess and the app’s response.',
+      ],
+      visual: 'architecture-bacoin-core',
+    },
+    {
+      id: 'architecture-guessing-game',
+      title: 'Guess a number.',
+      sentence:
+        'Send one Bacoin with a guess, then receive the guessing app’s result through Core.',
+      talkingPoints: [
+        'Send one Bacoin with a guess from 1 to 10; this demonstration’s winning number is always 5.',
+        'Core first records Bucky 99 and App 101; the laptop decides after receiving the guess.',
+        '“You win” returns 10, producing 109/91; “You lose” returns only data, leaving 99/101.',
+        'The phone reveals the result after delivery; fees are omitted from this illustrative accounting.',
+      ],
+      visual: 'architecture-guessing-game',
     },
   ],
 }

@@ -6,6 +6,7 @@ import { RequestTypesScene } from './RequestTypesScene'
 import { MessagingScene } from './MessagingScene'
 import { CoinsDataScene } from './CoinsDataScene'
 import { PingPongScene } from './PingPongScene'
+import { GuessingGameScene } from './GuessingGameScene'
 import { AccountTable } from './AccountTable'
 import './architecture.css'
 
@@ -151,7 +152,11 @@ export function ArchitectureScenes({
           ? 'Send coins and a message together from Bucky to Ty through Bonsai Core. Continue from the earlier transfer with Bucky at 99 and Ty at 1. Start with Amount 1 and Here you go. The amount and message are editable. Core updates the balances when the request arrives, producing 98 and 2 for a one-coin transfer, then Ty receives the message and a coin receipt. Replay restores the starting balances of 99 and 1.'
           : visual === 'architecture-ping-pong'
             ? 'Bucky’s phone connects through Bonsai Core to a Ping-pong app on a laptop. Press Send Ping to start the round-trip timer. The laptop automatically replies with Pong when Ping arrives. Pong returns through Core, and the timer stops only when Bucky’s phone receives it. Pause holds both travel and timing; Replay resets the demonstration.'
-            : 'Three kinds of requests, all addressed to Ty: one coin only; the payload Hello, Ty alone with no amount shown; or one coin with that payload.'
+            : visual === 'architecture-bacoin-core'
+              ? 'Bacoin Core is a new server for Bacoin, illustrated with a bacon coin emblem.'
+              : visual === 'architecture-guessing-game'
+                ? 'Bucky’s phone and a guessing game on a laptop connect through Bacoin Core. Both accounts start with 100 Bacoin. Send one coin with a whole-number guess from 1 to 10. Core records the entry payment before the app receives the guess. A correct guess returns You win and ten Bacoin through Core; an incorrect guess returns only You lose. The phone shows the result only on arrival. Replay resets the game.'
+                : 'Three kinds of requests, all addressed to Ty: one coin only; the payload Hello, Ty alone with no amount shown; or one coin with that payload.'
 
   return (
     <div
@@ -160,7 +165,8 @@ export function ArchitectureScenes({
         step === 3 ||
         visual === 'architecture-messaging' ||
         visual === 'architecture-coins-data' ||
-        visual === 'architecture-ping-pong'
+        visual === 'architecture-ping-pong' ||
+        visual === 'architecture-guessing-game'
           ? 'group'
           : 'img'
       }
@@ -173,6 +179,12 @@ export function ArchitectureScenes({
       {visual === 'architecture-messaging' && <MessagingScene />}
       {visual === 'architecture-coins-data' && <CoinsDataScene />}
       {visual === 'architecture-ping-pong' && <PingPongScene paused={paused} />}
+      {visual === 'architecture-bacoin-core' && (
+        <div className="architecture-first-core">
+          <CoreServer currency="bacoin" />
+        </div>
+      )}
+      {visual === 'architecture-guessing-game' && <GuessingGameScene />}
     </div>
   )
 }

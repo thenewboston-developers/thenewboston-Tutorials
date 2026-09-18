@@ -1,0 +1,86 @@
+.architecture-game-laptop {
+  position: absolute;
+  top: 820px;
+  left: 1620px;
+}
+.architecture-game-screen {
+  gap: 20px;
+}
+.architecture-game-screen .architecture-chat-inbox {
+  min-height: 140px;
+  align-items: center;
+}
+.architecture-game-screen input:focus-visible {
+  outline: 4px solid #238368;
+  outline-offset: 3px;
+}
+.architecture-game-screen input[aria-invalid='true'] {
+  border-color: #b46b48;
+}
+.architecture-game-receipt {
+  width: 100%;
+}
+.architecture-game-receipt .architecture-chat-bubble {
+  width: fit-content;
+  padding: 12px 18px;
+  font-size: 38px;
+}
+.architecture-game-receipt .architecture-game-loss {
+  border-color: #dec5b5;
+  background: #faf0e7;
+  color: #975831;
+}
+.architecture-game-credit {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 12px;
+  color: #257557;
+  font-size: 37px;
+  line-height: 1.2;
+}
+.architecture-game-program {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 22px;
+}
+.architecture-game-program-caption {
+  color: #496580;
+  font-size: 32px;
+}
+.architecture-game-program > strong {
+  font-size: 74px;
+  line-height: 1.2;
+}
+.architecture-game-program .architecture-game-win-title {
+  color: #257557;
+}
+.architecture-game-program .architecture-game-loss-title {
+  color: #975831;
+}
+.architecture-game-prize {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  color: #806032;
+  font-size: 36px;
+}
+.architecture-scene .architecture-game-packet {
+  width: 475px;
+  gap: 26px;
+}
+.architecture-game-packet-amount {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 12px;
+  font-size: 53px;
+}
+.architecture-game-packet p {
+  font-size: 43px;
+  font-weight: 550;
+}

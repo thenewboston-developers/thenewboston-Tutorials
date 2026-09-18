@@ -7,6 +7,8 @@ export type SceneId =
   | 'architecture-messaging'
   | 'architecture-coins-data'
   | 'architecture-ping-pong'
+  | 'architecture-bacoin-core'
+  | 'architecture-guessing-game'
 
 export type ArtworkBrief = {
   id: string

@@ -1,6 +1,6 @@
 # Core Architecture — authored tutorial request
 
-This document records the author’s requested introduction to a new architecture tutorial series. It is presented as **Chapter 1 — Core Architecture** in this independent tutorial app. The introduction contains eight actual slides, each with its own URL position. Slides 1–4 establish the server and transfer, slide 5 compares request types, slide 6 demonstrates messaging, slide 7 combines coins with an editable message, and slide 8 follows a Ping/Pong round trip. There are no phase controls.
+This document records the author’s requested introduction to a new architecture tutorial series. It is presented as **Chapter 1 — Core Architecture** in this independent tutorial app. The introduction contains ten actual slides, each with its own URL position. Slides 1–4 establish the server and transfer, slide 5 compares request types, slide 6 demonstrates messaging, slide 7 combines coins with an editable message, slide 8 follows a Ping/Pong round trip, and slides 9–10 introduce Bacoin Core and a guessing game. There are no phase controls.
 
 ## Slide 1: Core server
 
@@ -56,20 +56,39 @@ Allow one click-initiated round trip per demonstration. Pause holds both travel 
 
 The timer shows elapsed presentation time in a local illustration, not a network benchmark or an actual network request. Keep that explanation in presenter notes and documentation, off the canvas.
 
+## Slide 9: Bacoin Core
+
+Show **Bacoin Core** alone in the same standalone server composition as slide 1, with a Bacoin coin/emblem in place of the Bonsai emblem. Preserve the exact spelling **Bacoin**. There are no phones, laptop, account table, requests, or game controls on this slide.
+
+Bacoin is the currency and Core server for subsequent new examples unless the author specifies another currency. Slides 1–8 remain Bonsai examples.
+
+## Slide 10: guess a number
+
+Use slide 8’s layout with **Bacoin Core** at the top center, Bucky’s phone at the bottom left, and a laptop **Guessing game** at the bottom right. Add the balance table to Core’s right, initially **123 / Bucky / 100** and **789 / App / 100**. These account numbers are simplified teaching labels. The phone sends a fixed **Amount / 1** with an editable integer guess from **1 through 10**, initially **1**. The idle laptop displays **Pick a number**, the range **1–10**, and a **10 Bacoin** prize.
+
+One click on Send begins **phone → Core → laptop → Core → phone**, with each of the four travel legs lasting approximately **1400 ms** in normal motion. At the first Core arrival, record **Bucky 99 / App 101**. The laptop evaluates the guess only when it receives the request, then responds automatically:
+
+- Guess **5** produces **You win** with **10** Bacoin. At the reply’s Core arrival, record **Bucky 109 / App 91**. At the phone arrival, show **You win** and a Bacoin **+10** receipt.
+- Every other valid guess produces **You lose** with zero coin amount, a data-only reply. The reply leaves balances at **Bucky 99 / App 101**. At the phone arrival, show **You lose** without a coin indicator.
+
+Do not determine or display the result before the laptop receives the guess, and do not show the phone’s result or receipt before the reply reaches it. The winning payout comes from the App’s recorded balance. The initial request and the reply are separate transfers through Core.
+
+The winning number is always **5** for this deterministic illustration. Explain that fixed answer and the omitted transaction fees only in presenter notes/documentation; do not announce the fixed answer on the idle canvas. Allow one round per demonstration. Replay, leaving and reentering the slide, or reload cancels pending work and restores **100 / 100**, guess **1**, and the idle app. Pause holds request travel. Reduced motion still waits for Send, then completes the same chosen outcome without animated travel.
+
 ## Presentation conventions
 
-Use clean native architecture diagrams and generous, readable labels. Slides advance only through ordinary slide navigation, never automatically. Slides 1–3 and 5 are static teaching states; slides 4, 6, 7, and 8 wait for their Send or Send Ping button. No additional architecture layers are part of this introduction.
+Use clean native architecture diagrams and generous, readable labels. Slides advance only through ordinary slide navigation, never automatically. Slides 1–3, 5, and 9 are static teaching states; slides 4, 6, 7, 8, and 10 wait for their Send or Send Ping button. No additional architecture layers are part of this introduction.
 
-The optional author references [server.jpg](/Users/bucky/Downloads/server.jpg) and [server2.jpg](/Users/bucky/Downloads/server2.jpg) informed the server style. They are not app assets or build dependencies. Use original native vector art with crisp professional dimensional/isometric construction in dark navy and blue. Polish the phones to the same dimensional style, keeping the screen content flat and readable. Add a Bonsai Coin emblem to the server’s upper-right side panel, following that panel’s isometric perspective.
+The optional author references [server.jpg](/Users/bucky/Downloads/server.jpg) and [server2.jpg](/Users/bucky/Downloads/server2.jpg) informed the server style. They are not app assets or build dependencies. Use original native vector art with crisp professional dimensional/isometric construction in dark navy and blue. Polish the phones to the same dimensional style, keeping the screen content flat and readable. Add the currency’s coin emblem to the server’s upper-right side panel, following that panel’s isometric perspective: Bonsai on slides 1–8 and Bacoin on slides 9–10.
 
 On slide 4, stack **To** above an input containing **Ty**, then **Amount** above an input containing **1**. Place the **Send** button at the bottom, with the Bonsai coin logo to the right of the Send text. Keep both fields read-only.
 
 Apply the author’s visual directions throughout:
 
-- Put every **Bonsai Core** label above its server, wherever a server appears.
+- Put the **Bonsai Core** or **Bacoin Core** label above its corresponding server.
 - Place each balance table to the right of its server.
 - Remove the standalone **100 minted** caption and the coin beside that caption from every slide.
 - When a phone is connected, place Core at the top center and Bucky’s phone at the bottom left. Run a gently curved wire from the top of the phone to the left side of Core, with no arrowheads or outside **Connected** labels. Slide 3’s green **Connected** status belongs inside the phone.
-- On slides 6 and 7, vertically center the complete composition with balanced whitespace above the Bonsai Core label and below the Bucky/Ty names, preserving scale, relative positions, wires, and packet paths. Apply the same balanced composition to slide 8’s phone and laptop.
+- On slides 6 and 7, vertically center the complete composition with balanced whitespace above the Bonsai Core label and below the Bucky/Ty names, preserving scale, relative positions, wires, and packet paths. Apply the same balanced composition to the phone and laptop on slides 8 and 10.
 
-Fees are omitted from the displayed arithmetic and messaging demonstration; this does not make data-only requests free. **123** / **456** are simplified teaching account labels. Brief source and implementation context belongs in presenter notes and [the art-direction document](chapter-01-art-direction.md), keeping the canvas focused on the requested flow.
+Fees are omitted from the displayed arithmetic and messaging demonstration; this does not make data-only requests free. **123**, **456**, and **789** are simplified teaching account labels. Brief source and implementation context belongs in presenter notes and [the art-direction document](chapter-01-art-direction.md), keeping the canvas focused on the requested flow.

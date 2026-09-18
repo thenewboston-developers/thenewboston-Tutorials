@@ -1,0 +1,134 @@
+.phase-controls {
+  margin-top: 18px;
+  padding: 15px 0;
+  border-bottom: 1px solid #dce4de;
+}
+
+.phase-toolbar,
+.phase-arrows {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.phase-toolbar {
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.phase-status {
+  margin: 0;
+  color: #536d5d;
+  font-size: 12px;
+}
+
+.phase-status strong {
+  color: #294c3b;
+}
+
+.phase-status > span {
+  margin-left: 14px;
+  color: #294c3b;
+  font-weight: 600;
+}
+
+.phase-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 8px 12px;
+  border: 1px solid #dce4de;
+  border-radius: 7px;
+  background: #fff;
+  color: #344d40;
+  font-size: 12px;
+}
+
+.phase-next {
+  background: #2c5542;
+  border-color: #2c5542;
+  color: #fff;
+}
+
+.phase-arrow:not([aria-disabled='true']):hover {
+  border-color: #688d77;
+}
+
+.phase-next:not([aria-disabled='true']):hover {
+  background: #1c402f;
+}
+
+.phase-arrow[aria-disabled='true'] {
+  color: #87928b;
+  background: #edf1ee;
+  border-color: #e0e6e1;
+}
+
+.phase-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.phase-step {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 42px;
+  padding: 9px 13px;
+  border: 1px solid #dce4de;
+  border-radius: 7px;
+  background: transparent;
+  color: #536d5d;
+  font-size: 12px;
+}
+
+.phase-step > span {
+  color: #506959;
+  font-variant-numeric: tabular-nums;
+  font-size: 10px;
+}
+
+.phase-step:hover,
+.phase-step[aria-current='step'] {
+  border-color: #8daa96;
+  background: #e7efe9;
+  color: #244e39;
+}
+
+.phase-step[aria-current='step'] {
+  font-weight: 600;
+}
+
+@media (max-width: 760px) {
+  .phase-toolbar {
+    gap: 12px;
+  }
+
+  .phase-status {
+    flex-basis: 100%;
+  }
+
+  .phase-arrows {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .phase-arrow,
+  .phase-step {
+    min-height: 44px;
+  }
+
+  .phase-steps {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .phase-step {
+    padding: 9px 10px;
+    text-align: left;
+  }
+}

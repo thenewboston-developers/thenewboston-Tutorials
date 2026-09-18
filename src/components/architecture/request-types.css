@@ -1,0 +1,125 @@
+.request-types-grid {
+  position: absolute;
+  top: 220px;
+  left: 180px;
+  right: 180px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 55px;
+}
+
+.request-types-card {
+  min-width: 0;
+  padding: 54px 48px 60px;
+  border: 2px solid #dbe3e9;
+  border-top: 8px solid #d3975b;
+  border-radius: 32px;
+  background: #fff;
+  text-align: center;
+  animation: request-types-arrive 550ms 100ms ease-out both;
+}
+
+.request-types-kind-both {
+  border-top-color: #36a68d;
+  animation-delay: 500ms;
+}
+
+.request-types-kind-data {
+  border-top-color: #6287d4;
+  animation-delay: 300ms;
+}
+
+.request-types-art {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 380px;
+  height: 290px;
+  margin: 0 auto;
+}
+
+.request-types-kind-both .request-types-art > .vision-coin {
+  position: absolute;
+  left: 0;
+  top: 12px;
+}
+
+.request-types-note-mark {
+  width: 200px;
+  height: 160px;
+  border: 3px solid #aec3e5;
+  border-radius: 32px 32px 32px 4px;
+  background: #e5edfb;
+  color: #295ebb;
+  font-size: 112px;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.request-types-kind-both .request-types-note-mark {
+  position: absolute;
+  right: 0;
+  top: 89px;
+  width: 156px;
+  height: 127px;
+  font-size: 91px;
+}
+
+.request-types-name {
+  display: block;
+  margin: 22px 0 52px;
+  font-size: 64px;
+  line-height: 1.15;
+}
+
+.request-types-packet {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+  text-align: left;
+}
+
+.request-types-amount,
+.request-types-recipient,
+.request-types-payload {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.request-types-recipient > span,
+.request-types-amount > span,
+.request-types-payload > span {
+  display: block;
+  color: #5a6e7d;
+  font-size: 42px;
+  line-height: 1.2;
+}
+
+.request-types-recipient > strong,
+.request-types-amount > strong,
+.request-types-payload > strong {
+  display: block;
+  color: #203f53;
+  font-size: 52px;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+@keyframes request-types-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .request-types-card {
+    animation: none;
+  }
+}

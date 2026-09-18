@@ -1,0 +1,17 @@
+.vision-coin {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.vision-coin.coin-illustrated {
+  display: block;
+  flex-shrink: 0;
+  background: none;
+  box-shadow: none;
+}
+
+.coin-illustrated > svg,
+.creator-offering {
+  display: block;
+  flex-shrink: 0;
+}

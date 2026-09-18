@@ -1,0 +1,186 @@
+.architecture-messaging-demo {
+  position: absolute;
+  inset: 0;
+  transform: translateY(-44.5px);
+}
+.architecture-chat-core {
+  position: absolute;
+  top: 110px;
+  left: 980px;
+  width: 600px;
+}
+.architecture-scene .architecture-chat-phone {
+  position: absolute;
+  top: 650px;
+  width: 470px;
+}
+.architecture-chat-bucky {
+  left: 215px;
+}
+.architecture-chat-ty {
+  left: 1935px;
+}
+.architecture-chat-phone .architecture-phone-shell {
+  height: 660px;
+}
+.architecture-chat-screen {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  height: 100%;
+  padding: 20px 22px;
+  text-align: left;
+}
+.architecture-chat-inbox {
+  display: flex;
+  flex: 1;
+  align-items: flex-start;
+  min-height: 120px;
+}
+.architecture-chat-bubble {
+  max-width: 100%;
+  margin: 0;
+  padding: 15px 20px;
+  border: 2px solid #abd1bf;
+  border-radius: 3px 18px 18px;
+  background: #e7f4ed;
+  color: #25684e;
+  font-size: 39px;
+  line-height: 1.2;
+}
+.architecture-chat-compose {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #496580;
+  font-size: 29px;
+  line-height: 1.2;
+}
+.architecture-chat-compose input {
+  width: 100%;
+  height: 68px;
+  min-width: 0;
+  padding: 8px 14px;
+  border: 2px solid #bbcddd;
+  border-radius: 12px;
+  background: #fff;
+  color: #203851;
+  font: inherit;
+  font-size: 36px;
+}
+.architecture-chat-compose textarea {
+  display: block;
+  width: 100%;
+  height: 109px;
+  padding: 11px 16px;
+  resize: none;
+  overflow: hidden;
+  border: 2px solid #bbcddd;
+  border-radius: 12px;
+  background: #fff;
+  color: #203851;
+  font:
+    450 36px / 1.18 'DM Sans Variable',
+    sans-serif;
+}
+.architecture-scene .architecture-chat-send {
+  flex-shrink: 0;
+  height: 79px;
+  margin: 0;
+  font-size: 42px;
+}
+.architecture-chat-send .architecture-data-icon {
+  width: 49px;
+  height: 49px;
+}
+.architecture-chat-send:not([aria-disabled='true']):hover {
+  background: linear-gradient(150deg, #408bc9, #2566a7);
+}
+.architecture-chat-send:not([aria-disabled='true']):active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #153f70;
+}
+.architecture-chat-send:focus-visible {
+  outline: 5px solid #238368;
+  outline-offset: 5px;
+}
+.architecture-chat-send[aria-disabled='true'] {
+  cursor: default;
+  border-color: #425d77;
+  background: #577793;
+  box-shadow: none;
+}
+.architecture-chat-packet {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: 440px;
+  min-height: 132px;
+  padding: 20px 25px;
+  border: 3px solid #a9c6df;
+  border-radius: 20px;
+  background: #fff;
+  offset-anchor: center;
+  offset-rotate: 0deg;
+  animation: architecture-chat-travel 1400ms ease-in-out both;
+}
+.architecture-chat-packet .architecture-data-icon {
+  width: 68px;
+  height: 68px;
+}
+.architecture-chat-packet p {
+  margin: 0;
+  font-size: 43px;
+  line-height: 1.2;
+}
+.architecture-scene .architecture-chat-reply-delay,
+.architecture-scene .architecture-chat-reply-typing {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  visibility: hidden;
+  pointer-events: none;
+}
+/* Invisible clocks preserve the reading pause and typing cadence under reduced
+   motion, while sharing the presentation's Pause and Replay controls. */
+.architecture-scene .architecture-chat-reply-delay {
+  animation: architecture-chat-reply-ready 2000ms linear both !important;
+}
+.architecture-scene .architecture-chat-reply-typing {
+  animation: architecture-chat-type-character 160ms linear both !important;
+}
+.motion-paused .architecture-chat-reply-delay,
+.motion-paused .architecture-chat-reply-typing {
+  animation-play-state: paused !important;
+}
+@keyframes architecture-chat-reply-ready {
+  from,
+  to {
+    opacity: 0;
+  }
+}
+@keyframes architecture-chat-type-character {
+  from,
+  to {
+    opacity: 0;
+  }
+}
+@keyframes architecture-chat-travel {
+  0% {
+    opacity: 0;
+    offset-distance: var(--chat-trip-start);
+  }
+  10%,
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    offset-distance: var(--chat-trip-end);
+  }
+}

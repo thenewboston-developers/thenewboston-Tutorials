@@ -1,0 +1,495 @@
+.vision-slide.architecture-scene {
+  transform: none;
+  color: #213b50;
+}
+
+.architecture-scene strong {
+  font-family: 'Manrope Variable', sans-serif;
+  font-weight: 650;
+}
+
+.architecture-server {
+  position: relative;
+  width: 600px;
+  text-align: center;
+}
+
+.architecture-server-picture {
+  position: relative;
+  height: 420px;
+}
+
+.architecture-server-picture > svg {
+  width: 100%;
+  height: 100%;
+}
+.architecture-server > strong {
+  display: block;
+  margin: 0 0 14px;
+  font-size: 68px;
+  line-height: 1.2;
+}
+
+.architecture-accounts {
+  width: 100%;
+  border: 3px solid #c9d9e7;
+  border-spacing: 0;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #fff;
+  font-size: 61px;
+  line-height: 1.2;
+}
+
+.architecture-accounts th,
+.architecture-accounts td {
+  padding: 20px 32px;
+  text-align: left;
+}
+.architecture-accounts thead th {
+  background: #eaf2f8;
+  color: #4e7290;
+  font-size: 43px;
+  font-weight: 500;
+}
+.architecture-accounts th:nth-child(2),
+.architecture-accounts td {
+  text-align: right;
+}
+.architecture-accounts tbody th {
+  font-weight: 500;
+  white-space: nowrap;
+}
+.architecture-accounts tbody td {
+  font-family: 'Manrope Variable', sans-serif;
+  font-size: 78px;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+.architecture-accounts tbody tr + tr > * {
+  border-top: 2px solid #e6edf2;
+}
+.architecture-accounts .architecture-change-heading,
+.architecture-accounts .architecture-change {
+  width: 130px;
+  padding-left: 10px;
+  padding-right: 34px;
+}
+.architecture-accounts tbody .architecture-change {
+  font-size: 46px;
+  font-weight: 550;
+}
+.architecture-accounts .architecture-debit {
+  color: #b46b48;
+}
+.architecture-accounts .architecture-credit {
+  color: #328775;
+}
+.architecture-balance-stack {
+  display: grid;
+}
+.architecture-balance-stack > span {
+  grid-area: 1 / 1;
+}
+
+.architecture-phone {
+  width: 360px;
+  text-align: center;
+}
+.architecture-phone-shell {
+  position: relative;
+  height: 570px;
+  border: 8px solid #516c89;
+  border-radius: 48px;
+  background: linear-gradient(135deg, #314a67, #17283e 65%);
+  box-shadow:
+    7px 7px 0 #1a2b42,
+    14px 14px 0 #314b68,
+    inset 0 0 0 3px #718ba4;
+}
+.architecture-phone-shell::after {
+  content: '';
+  position: absolute;
+  top: 123px;
+  left: -13px;
+  width: 5px;
+  height: 63px;
+  border-radius: 3px 0 0 3px;
+  background: #253d58;
+}
+.architecture-phone-speaker {
+  position: absolute;
+  top: 21px;
+  left: 50%;
+  width: 90px;
+  height: 9px;
+  transform: translateX(-50%);
+  border-radius: 10px;
+  background: #0d1b2c;
+  box-shadow: 0 2px 0 #607991;
+}
+.architecture-phone-speaker::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  right: -30px;
+  width: 13px;
+  height: 13px;
+  border: 3px solid #6485a3;
+  border-radius: 50%;
+  background: #132238;
+}
+.architecture-phone-home {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  width: 100px;
+  height: 7px;
+  transform: translateX(-50%);
+  border-radius: 8px;
+  background: #7893ac;
+}
+.architecture-phone-screen {
+  position: absolute;
+  inset: 48px 12px 38px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+  background: linear-gradient(155deg, #fff, #edf3fa);
+  border: 2px solid #c4d2e0;
+  border-radius: 23px;
+}
+.architecture-phone-name {
+  display: block;
+  margin-top: 26px;
+  font-size: 61px;
+  white-space: nowrap;
+}
+.architecture-send-form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  width: 260px;
+  text-align: left;
+  pointer-events: none;
+}
+.architecture-send-form-interactive .architecture-send-button {
+  pointer-events: auto;
+}
+.architecture-send-form-interactive .architecture-send-button:hover {
+  background: linear-gradient(150deg, #408bc9, #2566a7);
+}
+.architecture-send-form-interactive .architecture-send-button:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #153f70;
+}
+.architecture-send-form-interactive .architecture-send-button:focus-visible {
+  outline: 5px solid #238368;
+  outline-offset: 5px;
+}
+.architecture-send-form-interactive
+  .architecture-send-button[aria-disabled='true'] {
+  cursor: default;
+  background: #577793;
+  border-color: #425d77;
+  box-shadow: none;
+  transform: none;
+}
+.architecture-connected-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  color: #23845f;
+}
+.architecture-connected-state svg {
+  width: 160px;
+  height: 160px;
+}
+.architecture-connected-state strong {
+  font-size: 43px;
+  line-height: 1.2;
+}
+.architecture-send-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #415c78;
+  font-size: 34px;
+  font-weight: 550;
+  line-height: 1.15;
+}
+.architecture-send-field input {
+  width: 100%;
+  height: 79px;
+  padding: 9px 20px;
+  border: 3px solid #bccddd;
+  border-radius: 12px;
+  background: #fff;
+  color: #203851;
+  font:
+    550 46px / 1.15 'Manrope Variable',
+    sans-serif;
+  box-shadow: inset 0 3px 0 #eef3f8;
+}
+.architecture-send-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 17px;
+  width: 100%;
+  height: 89px;
+  margin-top: 5px;
+  padding: 9px 17px;
+  border: 2px solid #235b98;
+  border-radius: 14px;
+  color: #fff;
+  background: linear-gradient(150deg, #367db9, #205b98);
+  box-shadow: 0 4px 0 #153f70;
+  font:
+    600 45px / 1 'Manrope Variable',
+    sans-serif;
+  opacity: 1;
+}
+
+.architecture-first-core {
+  position: absolute;
+  top: 110px;
+  left: 980px;
+  width: 600px;
+}
+.architecture-first-records {
+  position: absolute;
+  top: 130px;
+  left: 650px;
+  width: 840px;
+}
+.architecture-core-server .architecture-first-core {
+  top: 400px;
+}
+.architecture-core-server .architecture-server {
+  transform: scale(1.55);
+  transform-origin: center;
+}
+.architecture-first-phone {
+  position: absolute;
+  top: 710px;
+}
+.architecture-first-phone {
+  left: 270px;
+}
+.architecture-connection-wires {
+  position: absolute;
+  inset: 0;
+  width: 2560px;
+  height: 1440px;
+  fill: none;
+  stroke: #7299ba;
+  stroke-width: 7px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.architecture-packet {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 15px 25px;
+  border: 3px solid #c6d8e7;
+  border-radius: 24px;
+  background: #fff;
+}
+.architecture-packet-amount {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+.architecture-packet-amount strong {
+  font-size: 68px;
+  color: #917035;
+}
+.architecture-data-icon {
+  display: block;
+  width: 85px;
+  height: 85px;
+  flex-shrink: 0;
+}
+.architecture-first-request {
+  left: 0;
+  top: 0;
+  offset-rotate: 0deg;
+  offset-anchor: center;
+  offset-distance: 100%;
+}
+.architecture-first-request {
+  offset-path: path(
+    'M450 710C450 520 725 650 825 510C890 420 985 416 1093 416'
+  );
+}
+.architecture-first-request {
+  animation: architecture-wire-trip 2000ms 120ms ease-in-out both;
+}
+.architecture-core-transfer .architecture-before {
+  animation: architecture-hide 100ms 2220ms linear both;
+}
+.architecture-core-transfer .architecture-after {
+  animation: architecture-show 100ms 2220ms linear both;
+}
+.architecture-lanes {
+  position: absolute;
+  top: 45px;
+  left: 130px;
+  width: 2300px;
+}
+.architecture-communication-lane {
+  position: relative;
+  height: 435px;
+}
+.architecture-communication-lane + .architecture-communication-lane {
+  border-top: 2px solid #dae4ed;
+}
+.architecture-lane-label {
+  position: absolute;
+  top: 18px;
+  left: 0;
+  font-size: 63px;
+}
+.architecture-communication-lane .architecture-phone {
+  position: absolute;
+  top: 126px;
+  width: 154px;
+}
+.architecture-communication-lane .architecture-phone:first-of-type {
+  left: 75px;
+}
+.architecture-communication-lane .architecture-phone:last-child {
+  right: 75px;
+}
+.architecture-communication-lane .architecture-phone-shell {
+  height: 222px;
+  border-width: 4px;
+  border-radius: 21px;
+  box-shadow:
+    3px 3px 0 #1a2b42,
+    7px 7px 0 #314b68,
+    inset 0 0 0 1.5px #718ba4;
+}
+.architecture-communication-lane .architecture-phone-shell::after {
+  top: 47px;
+  left: -7px;
+  width: 3px;
+  height: 28px;
+}
+.architecture-communication-lane .architecture-phone-speaker {
+  top: 10px;
+  width: 37px;
+  height: 4px;
+}
+.architecture-communication-lane .architecture-phone-speaker::after {
+  top: -1px;
+  right: -12px;
+  width: 6px;
+  height: 6px;
+  border-width: 1.5px;
+}
+.architecture-communication-lane .architecture-phone-home {
+  bottom: 8px;
+  width: 43px;
+  height: 3px;
+}
+.architecture-communication-lane .architecture-phone-screen {
+  inset: 22px 6px 20px;
+  border-width: 1px;
+  border-radius: 10px;
+}
+.architecture-communication-lane .architecture-phone-name {
+  width: 245px;
+  margin-top: 15px;
+  margin-left: -45px;
+  font-size: 42px;
+}
+.architecture-server-small {
+  position: absolute;
+  top: 85px;
+  left: 1000px;
+  width: 310px;
+}
+.architecture-server-small .architecture-server-picture {
+  height: 217px;
+}
+.architecture-server-small > strong {
+  margin: 0 0 10px;
+  font-size: 42px;
+}
+.architecture-lane-lines {
+  position: absolute;
+  inset: 0;
+  width: 2300px;
+  height: 435px;
+}
+.architecture-lane-lines svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: #7299ba;
+  stroke-width: 5px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+@keyframes architecture-wire-trip {
+  0% {
+    opacity: 0;
+    offset-distance: 0%;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    offset-distance: 100%;
+  }
+}
+
+@keyframes architecture-hide {
+  0% {
+    visibility: visible;
+  }
+  1%,
+  100% {
+    visibility: hidden;
+  }
+}
+@keyframes architecture-show {
+  0% {
+    visibility: hidden;
+  }
+  1%,
+  100% {
+    visibility: visible;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .architecture-scene *,
+  .architecture-scene *::before,
+  .architecture-scene *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .architecture-core-transfer .architecture-before {
+    visibility: hidden;
+  }
+  .architecture-core-transfer .architecture-after {
+    visibility: visible;
+  }
+  .architecture-first-request {
+    visibility: hidden;
+    opacity: 0;
+  }
+}

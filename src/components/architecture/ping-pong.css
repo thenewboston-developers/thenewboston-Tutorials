@@ -1,0 +1,100 @@
+.architecture-ping-laptop {
+  position: absolute;
+  top: 820px;
+  left: 1620px;
+}
+.architecture-ping-screen {
+  gap: 22px;
+}
+.architecture-ping-stopwatch {
+  padding: 22px 0 8px;
+  text-align: center;
+}
+.architecture-ping-stopwatch > span {
+  color: #496580;
+  font-size: 30px;
+}
+.architecture-ping-stopwatch output {
+  display: block;
+  margin-top: 10px;
+  color: #244c72;
+  font-family: 'Manrope Variable', sans-serif;
+  font-size: 84px;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.15;
+}
+.architecture-ping-stopwatch output > span {
+  margin-left: 12px;
+  font-size: 42px;
+}
+.architecture-ping-stopwatch output[data-state='stopped'] {
+  color: #257557;
+}
+.architecture-ping-screen .architecture-chat-inbox {
+  min-height: 80px;
+}
+.architecture-ping-program {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+.architecture-ping-listening {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  color: #496580;
+  font-size: 44px;
+}
+.architecture-ping-listening .architecture-data-icon {
+  width: 108px;
+  height: 108px;
+}
+.architecture-ping-response {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 26px;
+  width: 100%;
+}
+.architecture-ping-response > div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+}
+.architecture-ping-response span {
+  color: #496580;
+  font-size: 32px;
+}
+.architecture-ping-response strong {
+  color: #244c72;
+  font-size: 64px;
+}
+.architecture-ping-response > div:last-child strong {
+  color: #257557;
+}
+.architecture-ping-response > svg {
+  width: 60px;
+  height: 60px;
+  margin-top: 40px;
+  fill: none;
+  stroke: #7197b4;
+  stroke-width: 4px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.architecture-scene .architecture-ping-packet {
+  width: 285px;
+}
+.architecture-ping-packet p {
+  font-size: 54px;
+  font-weight: 600;
+}
+.architecture-ping-reply {
+  border-color: #9dccb9;
+  color: #257557;
+}

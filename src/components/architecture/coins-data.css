@@ -1,0 +1,77 @@
+.architecture-coins-data-records {
+  position: absolute;
+  top: 245px;
+  left: 1670px;
+  width: 740px;
+}
+.architecture-coins-data-records .architecture-accounts {
+  font-size: 43px;
+}
+.architecture-coins-data-records .architecture-accounts th,
+.architecture-coins-data-records .architecture-accounts td {
+  padding: 18px 22px;
+}
+.architecture-coins-data-records .architecture-accounts thead th {
+  font-size: 33px;
+}
+.architecture-coins-data-records .architecture-accounts tbody td {
+  font-size: 57px;
+}
+.architecture-coins-data-records .architecture-accounts .architecture-change {
+  width: 105px;
+  font-size: 36px;
+}
+.architecture-coins-data .architecture-chat-screen {
+  gap: 14px;
+}
+.architecture-coins-data .architecture-chat-inbox {
+  min-height: 0;
+  overflow-y: auto;
+}
+.architecture-coins-data-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.architecture-coins-data-fields label {
+  min-width: 0;
+}
+.architecture-coins-data .architecture-chat-compose textarea {
+  height: 90px;
+}
+.architecture-coins-data .architecture-chat-compose input:focus-visible,
+.architecture-coins-data .architecture-chat-compose textarea:focus-visible {
+  outline: 4px solid #238368;
+  outline-offset: 3px;
+}
+.architecture-coins-data-receipt {
+  width: 100%;
+}
+.architecture-coins-data .architecture-chat-bubble {
+  width: fit-content;
+  padding: 12px 18px;
+  font-size: 36px;
+  overflow-wrap: anywhere;
+}
+.architecture-coins-data-credit {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 10px;
+  color: #257557;
+  font-size: 39px;
+  line-height: 1.2;
+}
+.architecture-coins-data .architecture-coins-data-packet {
+  width: 510px;
+}
+.architecture-coins-data-packet-amount {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 12px;
+  font-size: 53px;
+}
+.architecture-coins-data-packet p {
+  overflow-wrap: anywhere;
+}

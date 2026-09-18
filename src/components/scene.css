@@ -1,0 +1,13 @@
+.motion-stage,
+.vision-slide {
+  position: absolute;
+  inset: 0;
+}
+.vision-slide {
+  overflow: hidden;
+}
+.motion-paused *,
+.motion-paused *::before,
+.motion-paused *::after {
+  animation-play-state: paused !important;
+}

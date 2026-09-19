@@ -132,7 +132,7 @@ for (const reducedMotion of ['no-preference', 'reduce'] as const) {
   }
 }
 
-test('ten architecture slides have direct routes, bounded navigation, keyboard shortcuts, and history without phase controls', async ({
+test('twelve architecture slides have direct routes, bounded navigation, keyboard shortcuts, and history without phase controls', async ({
   page,
 }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' })
@@ -147,7 +147,7 @@ test('ten architecture slides have direct routes, bounded navigation, keyboard s
     name: 'Animation phase controls',
   })
   const scene = page.locator('.architecture-scene')
-  await expect(progress.getByRole('button')).toHaveCount(10)
+  await expect(progress.getByRole('button')).toHaveCount(12)
   await expect(previous).toBeDisabled()
   await expect(phaseControls).toHaveCount(0)
   await expect(scene).toContainText('Bonsai Core')
@@ -203,9 +203,33 @@ test('ten architecture slides have direct routes, bounded navigation, keyboard s
   await expect(page).toHaveURL(new RegExp(`${chapterPath}/10$`))
   await expect(page.getByTestId('guessing-game-demo')).toBeVisible()
   await expect(phaseControls).toHaveCount(0)
+  await next.click()
+  await expect(page).toHaveURL(new RegExp(`${chapterPath}/11$`))
+  await expect(page.getByTestId('bitcoin-trade-demo')).toHaveAttribute(
+    'data-mode',
+    'buy',
+  )
+  await expect(phaseControls).toHaveCount(0)
+  await next.click()
+  await expect(page).toHaveURL(new RegExp(`${chapterPath}/12$`))
+  await expect(page.getByTestId('bitcoin-trade-demo')).toHaveAttribute(
+    'data-mode',
+    'sell',
+  )
+  await expect(phaseControls).toHaveCount(0)
   await expect(next).toBeDisabled()
   await page.keyboard.press('ArrowRight')
+  await expect(page).toHaveURL(new RegExp(`${chapterPath}/12$`))
+
+  await page.goBack()
+  await expect(page).toHaveURL(new RegExp(`${chapterPath}/11$`))
+  await expect(page.getByTestId('bitcoin-trade-demo')).toHaveAttribute(
+    'data-mode',
+    'buy',
+  )
+  await page.goBack()
   await expect(page).toHaveURL(new RegExp(`${chapterPath}/10$`))
+  await expect(page.getByTestId('guessing-game-demo')).toBeVisible()
 
   await page.goBack()
   await expect(page).toHaveURL(new RegExp(`${chapterPath}/9$`))
@@ -247,6 +271,18 @@ test('ten architecture slides have direct routes, bounded navigation, keyboard s
   await page.goForward()
   await expect(page).toHaveURL(new RegExp(`${chapterPath}/10$`))
   await expect(page.getByTestId('guessing-game-demo')).toBeVisible()
+  await page.goForward()
+  await expect(page).toHaveURL(new RegExp(`${chapterPath}/11$`))
+  await expect(page.getByTestId('bitcoin-trade-demo')).toHaveAttribute(
+    'data-mode',
+    'buy',
+  )
+  await page.goForward()
+  await expect(page).toHaveURL(new RegExp(`${chapterPath}/12$`))
+  await expect(page.getByTestId('bitcoin-trade-demo')).toHaveAttribute(
+    'data-mode',
+    'sell',
+  )
   await next.focus()
   await page.keyboard.press('Home')
   await expect(page).toHaveURL(new RegExp(`${chapterPath}/1$`))
@@ -254,7 +290,7 @@ test('ten architecture slides have direct routes, bounded navigation, keyboard s
   await page.keyboard.press('ArrowLeft')
   await expect(page).toHaveURL(new RegExp(`${chapterPath}/1$`))
   await page.keyboard.press('End')
-  await expect(page).toHaveURL(new RegExp(`${chapterPath}/10$`))
+  await expect(page).toHaveURL(new RegExp(`${chapterPath}/12$`))
 })
 
 test('Core waits for a clicked request and pause holds settlement', async ({

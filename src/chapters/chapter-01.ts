@@ -5,7 +5,7 @@ export const chapter01: Chapter = {
   number: 1,
   title: 'Core Architecture',
   description:
-    'An independent ten-slide architecture introduction: Core, balances, transfers, request types, messaging, Ping/Pong, and a Bacoin guessing game.',
+    'An independent twelve-slide architecture introduction: Core, balances, transfers, messaging, Ping/Pong, a guessing game, and Bitcoin trades through an app.',
   sourcePath: 'docs/core-architecture-source.md',
   slides: [
     {
@@ -134,6 +134,32 @@ export const chapter01: Chapter = {
         'The phone reveals the result after delivery; fees are omitted from this illustrative accounting.',
       ],
       visual: 'architecture-guessing-game',
+    },
+    {
+      id: 'architecture-bitcoin-buy',
+      title: 'Buy Bitcoin.',
+      sentence:
+        'Pay the trading app through Bacoin Core, then receive Bitcoin from the app’s wallet on the Bitcoin network.',
+      talkingPoints: [
+        'At the illustrative rate of 100 Bacoin for 1 BTC, Bucky sends payment and receiving address together.',
+        'Core records Bucky 0 and App 200 before the trading app receives the purchase request.',
+        'The app’s wallet sends one Bitcoin; Bucky’s receipt follows the simulated confirmation on the Bitcoin network.',
+        'The addresses are placeholders; fees are omitted, and the confirmation animation promises no real threshold or timing.',
+      ],
+      visual: 'architecture-bitcoin-buy',
+    },
+    {
+      id: 'architecture-bitcoin-sell',
+      title: 'Sell Bitcoin.',
+      sentence:
+        'Request a deposit address, send Bitcoin, then receive Bacoin after the trading app confirms the deposit.',
+      talkingPoints: [
+        'Request the app’s deposit address through Core; this message moves no Bacoin in the simplified example.',
+        'After the address arrives, click Send 1 BTC separately; the app monitors its wallet for the deposit.',
+        'Only confirmed receipt triggers the app’s 100-Bacoin payment; Core records 100/100 before the phone receives it.',
+        'This independent demonstration uses a fixed example rate, placeholder addresses, omitted fees, and simulated Bitcoin confirmation.',
+      ],
+      visual: 'architecture-bitcoin-sell',
     },
   ],
 }

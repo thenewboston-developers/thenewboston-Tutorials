@@ -7,6 +7,7 @@ import { MessagingScene } from './MessagingScene'
 import { CoinsDataScene } from './CoinsDataScene'
 import { PingPongScene } from './PingPongScene'
 import { GuessingGameScene } from './GuessingGameScene'
+import { BitcoinTradingScene } from './BitcoinTradingScene'
 import { AccountTable } from './AccountTable'
 import './architecture.css'
 
@@ -156,7 +157,11 @@ export function ArchitectureScenes({
               ? 'Bacoin Core is a new server for Bacoin, illustrated with a bacon coin emblem.'
               : visual === 'architecture-guessing-game'
                 ? 'Bucky’s phone and a guessing game on a laptop connect through Bacoin Core. Both accounts start with 100 Bacoin. Send one coin with a whole-number guess from 1 to 10. Core records the entry payment before the app receives the guess. A correct guess returns You win and ten Bacoin through Core; an incorrect guess returns only You lose. The phone shows the result only on arrival. Replay resets the game.'
-                : 'Three kinds of requests, all addressed to Ty: one coin only; the payload Hello, Ty alone with no amount shown; or one coin with that payload.'
+                : visual === 'architecture-bitcoin-buy'
+                  ? 'Bucky’s phone and a trading app connect to both Bacoin Core and a Bitcoin node. Buy one Bitcoin by sending 100 Bacoin and a receiving Bitcoin address through Core. After receiving payment, the app sends one Bitcoin through the Bitcoin network. The diagram confirms the Bitcoin transaction before showing the receipt on Bucky’s phone.'
+                  : visual === 'architecture-bitcoin-sell'
+                    ? 'Bucky asks the trading app for a deposit address for one Bitcoin through Bacoin Core. After the address arrives, click Send one Bitcoin. The app monitors its deposit address, waits for the Bitcoin confirmation, then sends 100 Bacoin through Core. The payment appears on Bucky’s phone only after delivery.'
+                    : 'Three kinds of requests, all addressed to Ty: one coin only; the payload Hello, Ty alone with no amount shown; or one coin with that payload.'
 
   return (
     <div
@@ -166,7 +171,9 @@ export function ArchitectureScenes({
         visual === 'architecture-messaging' ||
         visual === 'architecture-coins-data' ||
         visual === 'architecture-ping-pong' ||
-        visual === 'architecture-guessing-game'
+        visual === 'architecture-guessing-game' ||
+        visual === 'architecture-bitcoin-buy' ||
+        visual === 'architecture-bitcoin-sell'
           ? 'group'
           : 'img'
       }
@@ -185,6 +192,12 @@ export function ArchitectureScenes({
         </div>
       )}
       {visual === 'architecture-guessing-game' && <GuessingGameScene />}
+      {visual === 'architecture-bitcoin-buy' && (
+        <BitcoinTradingScene mode="buy" />
+      )}
+      {visual === 'architecture-bitcoin-sell' && (
+        <BitcoinTradingScene mode="sell" />
+      )}
     </div>
   )
 }

@@ -9,6 +9,8 @@ export type SceneId =
   | 'architecture-ping-pong'
   | 'architecture-bacoin-core'
   | 'architecture-guessing-game'
+  | 'architecture-bitcoin-buy'
+  | 'architecture-bitcoin-sell'
 
 export type ArtworkBrief = {
   id: string

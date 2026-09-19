@@ -1,0 +1,173 @@
+.architecture-trade-laptop {
+  position: absolute;
+  top: 820px;
+  left: 1620px;
+}
+.architecture-trade-node {
+  position: absolute;
+  top: 850px;
+  left: 960px;
+  width: 520px;
+}
+.architecture-connection-wires .architecture-bitcoin-wire {
+  stroke: #da9746;
+}
+.architecture-trade-confirmation-status {
+  height: 52px;
+  margin-top: 14px;
+  color: #257557;
+  font-size: 34px;
+  text-align: center;
+}
+.architecture-trade-node-confirming .architecture-trade-confirmation-status {
+  color: #a46b23;
+}
+.architecture-trade-screen {
+  gap: 17px;
+  padding: 18px 22px;
+}
+.architecture-trade-fields {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 14px;
+}
+.architecture-trade-fields label {
+  min-width: 0;
+}
+.architecture-trade-screen .architecture-chat-compose {
+  gap: 6px;
+  font-size: 27px;
+}
+.architecture-trade-screen .architecture-chat-compose input {
+  height: 60px;
+  padding: 7px 11px;
+  font-size: 31px;
+}
+.architecture-trade-screen .architecture-chat-compose input::placeholder {
+  color: #7c8fa2;
+  font-size: 28px;
+}
+.architecture-trade-screen .architecture-chat-inbox {
+  min-height: 100px;
+  align-items: center;
+}
+.architecture-trade-screen .architecture-chat-send {
+  height: 76px;
+  gap: 12px;
+  font-size: 35px;
+}
+.architecture-trade-bitcoin-balance {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #8b5c20;
+  font-size: 34px;
+  line-height: 1.2;
+}
+.architecture-trade-receipt > span {
+  color: #496580;
+  font-size: 28px;
+}
+.architecture-trade-receipt > strong {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+  color: #257557;
+  font-size: 39px;
+}
+.architecture-trade-address-ready {
+  font-size: 32px;
+}
+.architecture-trade-program {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  padding: 14px 20px;
+}
+.architecture-trade-rate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  color: #3d536b;
+  font-size: 41px;
+}
+.architecture-trade-rate > span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.architecture-trade-rate .architecture-trade-equals {
+  color: #7a8ea2;
+  font-size: 38px;
+}
+.architecture-trade-app-status {
+  color: #335b7b;
+  font-size: 36px;
+  line-height: 1.2;
+}
+.architecture-trade-monitor {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #8b5c20;
+  font-size: 25px;
+}
+.architecture-trade-monitor-confirmed {
+  color: #257557;
+}
+.architecture-trade-monitor code,
+.architecture-trade-app-address {
+  font-family: 'DM Sans Variable', sans-serif;
+  font-size: 30px;
+}
+.architecture-trade-app-address {
+  color: #6b7f93;
+}
+.architecture-trade-program .architecture-trade-bitcoin-balance {
+  font-size: 28px;
+}
+.architecture-scene .architecture-trade-packet {
+  width: 485px;
+  min-height: 132px;
+  gap: 20px;
+}
+.architecture-trade-bitcoin-packet {
+  border-color: #e1b46e;
+}
+.architecture-trade-packet-amount {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 10px;
+  font-size: 44px;
+}
+.architecture-trade-packet-payload {
+  min-width: 0;
+}
+.architecture-trade-packet-payload > strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 38px;
+}
+.architecture-trade-packet-payload p {
+  font-size: 31px;
+}
+.architecture-scene .architecture-trade-confirmation-clock {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  visibility: hidden;
+  pointer-events: none;
+  animation: architecture-bitcoin-confirmation 1200ms linear both;
+}
+@keyframes architecture-bitcoin-confirmation {
+  from,
+  to {
+    opacity: 0;
+  }
+}

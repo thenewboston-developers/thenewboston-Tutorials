@@ -1,6 +1,6 @@
 # Core Architecture — authored tutorial request
 
-This document records the author’s requested introduction to a new architecture tutorial series. It is presented as **Chapter 1 — Core Architecture** in this independent tutorial app. The introduction contains ten actual slides, each with its own URL position. Slides 1–4 establish the server and transfer, slide 5 compares request types, slide 6 demonstrates messaging, slide 7 combines coins with an editable message, slide 8 follows a Ping/Pong round trip, and slides 9–10 introduce Bacoin Core and a guessing game. There are no phase controls.
+This document records the author’s requested introduction to a new architecture tutorial series. It is presented as **Chapter 1 — Core Architecture** in this independent tutorial app. The introduction contains twelve actual slides, each with its own URL position. Slides 1–4 establish the server and transfer, slide 5 compares request types, slide 6 demonstrates messaging, slide 7 combines coins with an editable message, slide 8 follows a Ping/Pong round trip, slides 9–10 introduce Bacoin Core and a guessing game, and slides 11–12 buy and sell Bitcoin through a trading app. There are no phase controls.
 
 ## Slide 1: Core server
 
@@ -75,11 +75,35 @@ Do not determine or display the result before the laptop receives the guess, and
 
 The winning number is always **5** for this deterministic illustration. Explain that fixed answer and the omitted transaction fees only in presenter notes/documentation; do not announce the fixed answer on the idle canvas. Allow one round per demonstration. Replay, leaving and reentering the slide, or reload cancels pending work and restores **100 / 100**, guess **1**, and the idle app. Pause holds request travel. Reduced motion still waits for Send, then completes the same chosen outcome without animated travel.
 
+## Slide 11: buy Bitcoin
+
+Use **Bacoin Core** at the top center, Bucky’s phone at the bottom left, a laptop **Trading app** at the bottom right, and a **Bitcoin node** centered below Core between the devices. Both devices connect to both networks: blue connections for Bacoin Core and orange for Bitcoin. Preserve **Bacoin** spelling. Bitcoin ownership and Bacoin account records remain separate. Each device’s BTC label shows only the wallet balance that device has learned; confirmation can precede the other device’s notification.
+
+Begin with Bacoin **Bucky 100 / App 100** and Bitcoin **Bucky 0 / App 1 BTC**. The phone shows read-only **To / Trading app**, **Amount / 100**, and **Bitcoin receiving address / bc1q…bucky**, with a clickable **Buy 1 BTC** button. The fixed teaching rate is **100 Bacoin = 1 BTC**.
+
+A click sends Bucky’s Bacoin payment and receiving address through Core. On reaching Core, record Bacoin **0 / 200** before the request reaches the laptop. After the app receives the request, its wallet authorizes a **1 BTC** transaction to Bucky’s address through the Bitcoin node/network. Show a simulated confirmation before confirmed Bitcoin ownership becomes **1 / 0**. At that point the app displays **0 BTC**, while Bucky’s phone still displays **0 BTC** until it receives the result. At phone arrival, update Bucky’s display to **1 BTC** and reveal **+1 BTC**.
+
+The internal animation states are: **ready → payment-to-core → payment-to-app → bitcoin-to-node → confirming → bitcoin-to-phone → complete**. Bacoin becomes **0 / 200** on entering payment-to-app. Confirmed Bitcoin ownership becomes **1 / 0** on entering bitcoin-to-phone: the app displays 0, but Bucky’s display stays 0 until complete. Each travel leg lasts **1400 ms**, and confirming lasts **1200 ms**, as presentation timing only. These are automatic states after the click, not manual phase controls.
+
+## Slide 12: sell Bitcoin
+
+Use the same two-network layout. Independently initialize the outcome of the buying example: Bacoin **Bucky 0 / App 200**, Bitcoin **Bucky 1 / App 0 BTC**. This slide does not depend on having completed slide 11.
+
+First click **Request deposit address**. A payload requesting a deposit address for **1 BTC** travels through Core to the trading app, with no Bacoin transfer in this simplified example. The app returns **bc1q…trade** through Core and begins monitoring for payment to that address. Only after the address reaches the phone, enable a separate manual **Send 1 BTC** action.
+
+That second click authorizes Bucky’s Bitcoin wallet to send **1 BTC** through the Bitcoin node/network. After simulated confirmation, confirmed Bitcoin ownership is **Bucky 0 / App 1**. Bucky’s display becomes **0 BTC**, but the app still displays **0 BTC** while the confirmed payment information travels to it. On app receipt, its display becomes **1 BTC**. Only after the app receives that confirmed deposit does it send **100 Bacoin** through Core. Core records Bacoin **100 / 100** before the phone receives its final **+100 Bacoin**.
+
+The address segment is **ready → address-request-to-core → address-request-to-app → address-to-core → address-to-phone → awaiting-bitcoin**. Monitoring begins on entering address-to-core. The funding segment begins only after the second click: **deposit-to-node → confirming → deposit-to-app → payout-to-core → payout-to-phone → complete**. Confirmed Bitcoin ownership becomes **0 / 1** on entering deposit-to-app: Bucky displays 0, while the app still displays 0. On entering payout-to-core, the app receives the confirmed deposit and displays 1; Core records **100 / 100** on entering payout-to-phone. Travel legs last **1400 ms** and confirmation **1200 ms**, as presentation timing only.
+
+Each slide permits one cycle. Pause holds travel and confirmation. Replay, reentry, and reload cancel pending work and restore that slide’s initial balances and controls. Reduced motion still waits for the initial click and completes only the current automatic segment: the entire buy, the sell address request up to awaiting-bitcoin, or the sell funding segment. Changing the motion preference during an active segment settles only that segment; it must never bypass the seller’s second manual click.
+
+The exchange rate is an illustrative constant, not a market quote. **bc1q…bucky** and **bc1q…trade** are shortened placeholders, not usable addresses. No real network request or transaction occurs, fees are omitted, and the confirmation beat promises no real duration or number of confirmations. Explain these points only in presenter notes/documentation. The wallet authorizes spending; the Bitcoin node validates and relays transactions rather than supplying the payout funds. See the [Bitcoin role and confirmation references](chapter-01-art-direction.md#bitcoin-roles-and-confirmation) used to verify these distinctions.
+
 ## Presentation conventions
 
-Use clean native architecture diagrams and generous, readable labels. Slides advance only through ordinary slide navigation, never automatically. Slides 1–3, 5, and 9 are static teaching states; slides 4, 6, 7, 8, and 10 wait for their Send or Send Ping button. No additional architecture layers are part of this introduction.
+Use clean native architecture diagrams and generous, readable labels. Slides advance only through ordinary slide navigation, never automatically. Slides 1–3, 5, and 9 are static teaching states; slides 4, 6, 7, 8, 10, 11, and 12 wait for their initial action button. No additional architecture layers are part of this introduction.
 
-The optional author references [server.jpg](/Users/bucky/Downloads/server.jpg) and [server2.jpg](/Users/bucky/Downloads/server2.jpg) informed the server style. They are not app assets or build dependencies. Use original native vector art with crisp professional dimensional/isometric construction in dark navy and blue. Polish the phones to the same dimensional style, keeping the screen content flat and readable. Add the currency’s coin emblem to the server’s upper-right side panel, following that panel’s isometric perspective: Bonsai on slides 1–8 and Bacoin on slides 9–10.
+The optional author references [server.jpg](/Users/bucky/Downloads/server.jpg) and [server2.jpg](/Users/bucky/Downloads/server2.jpg) informed the server style. They are not app assets or build dependencies. Use original native vector art with crisp professional dimensional/isometric construction in dark navy and blue. Polish the phones to the same dimensional style, keeping the screen content flat and readable. Add the currency’s coin emblem to the server’s upper-right side panel, following that panel’s isometric perspective: Bonsai on slides 1–8 and Bacoin on slides 9–12.
 
 On slide 4, stack **To** above an input containing **Ty**, then **Amount** above an input containing **1**. Place the **Send** button at the bottom, with the Bonsai coin logo to the right of the Send text. Keep both fields read-only.
 

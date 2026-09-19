@@ -1,6 +1,7 @@
 import { useId } from 'react'
 import { BonsaiArtwork } from './BonsaiArtwork'
 import { BacoinArtwork } from './BacoinArtwork'
+import { BitcoinArtwork } from './BitcoinArtwork'
 import './coin-artwork.css'
 
 function CoinSprig({ flip = false }: { flip?: boolean }) {
@@ -36,7 +37,7 @@ export function Coin({
   size = 180,
   label,
 }: {
-  kind: 'bonsai' | 'bacoin'
+  kind: 'bonsai' | 'bacoin' | 'bitcoin'
   size?: number
   label?: string
 }) {
@@ -73,9 +74,15 @@ export function Coin({
             <stop offset="1" stopColor={mid} />
           </linearGradient>
           <radialGradient id={`${id}-face`} cx=".36" cy=".25" r=".84">
-            <stop stopColor={light} />
-            <stop offset=".54" stopColor={mid} />
-            <stop offset="1" stopColor={shade} />
+            <stop stopColor={kind === 'bitcoin' ? '#ffb044' : light} />
+            <stop
+              offset=".54"
+              stopColor={kind === 'bitcoin' ? '#f7931a' : mid}
+            />
+            <stop
+              offset="1"
+              stopColor={kind === 'bitcoin' ? '#d9770d' : shade}
+            />
           </radialGradient>
         </defs>
         <circle
@@ -148,6 +155,11 @@ export function Coin({
         {kind === 'bacoin' && (
           <g transform="translate(31 27)">
             <BacoinArtwork size={194} />
+          </g>
+        )}
+        {kind === 'bitcoin' && (
+          <g transform="translate(31 27)">
+            <BitcoinArtwork size={194} />
           </g>
         )}
       </svg>

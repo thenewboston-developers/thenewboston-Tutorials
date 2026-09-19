@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test'
 import type { Page } from '@playwright/test'
 
 const chapterPath = '/#/chapters/core-architecture'
-const slideCount = 10
+const slideCount = 12
 
 function chapterLink(page: Page) {
   return page
@@ -129,7 +129,7 @@ test('invalid and old chapter routes fall back to Chapter 1, and slide numbers a
 })
 
 for (const reducedMotion of ['no-preference', 'reduce'] as const) {
-  test(`all ten direct routes render a scaled canvas without runtime errors (${reducedMotion})`, async ({
+  test(`all twelve direct routes render a scaled canvas without runtime errors (${reducedMotion})`, async ({
     page,
   }) => {
     await page.emulateMedia({ reducedMotion })

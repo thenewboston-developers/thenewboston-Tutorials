@@ -9,6 +9,7 @@ import { PingPongScene } from './PingPongScene'
 import { GuessingGameScene } from './GuessingGameScene'
 import { BitcoinTradingScene } from './BitcoinTradingScene'
 import { NativeTradeScene } from './NativeTradeScene'
+import { BridgeScene } from './BridgeScene'
 import { AccountTable } from './AccountTable'
 import './architecture.css'
 
@@ -166,7 +167,9 @@ export function ArchitectureScenes({
                       ? 'A trade between Bonsai and Coffee coins'
                       : visual === 'architecture-coffee-core'
                         ? 'Coffee Core is the server for Coffee coins, identified by its bronze coin and colored coffee emblem.'
-                        : 'Three kinds of requests, all addressed to Ty: one coin only; the payload Hello, Ty alone with no amount shown; or one coin with that payload.'
+                        : visual === 'architecture-bridge'
+                          ? 'Bucky’s laptop connects to a Bridge, which connects to Bonsai, Coffee, and Tuna cores. The laptop shows two visual examples: trading one Bonsai for twenty Coffee, and a social post with tips of one Bonsai, five Coffee, and two Tuna. The client has no direct connections to the cores.'
+                          : 'Three kinds of requests, all addressed to Ty: one coin only; the payload Hello, Ty alone with no amount shown; or one coin with that payload.'
 
   return (
     <div
@@ -208,6 +211,7 @@ export function ArchitectureScenes({
         <BitcoinTradingScene mode="sell" />
       )}
       {visual === 'architecture-native-trade' && <NativeTradeScene />}
+      {visual === 'architecture-bridge' && <BridgeScene />}
     </div>
   )
 }

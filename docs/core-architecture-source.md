@@ -1,6 +1,6 @@
 # Core Architecture — authored tutorial request
 
-This document records the author’s requested introduction to a new architecture tutorial series. It is presented as **Chapter 1 — Core Architecture** in this independent tutorial app. The introduction contains fourteen actual slides, each with its own URL position. Slides 1–4 establish the server and transfer, slide 5 compares request types, slide 6 demonstrates messaging, slide 7 combines coins with an editable message, slide 8 follows a Ping/Pong round trip, slides 9–10 introduce Tuna Core and a guessing game, slides 11–12 buy and sell Bitcoin through a trading app, slide 13 introduces Coffee Core alone, and slide 14 exchanges Bonsai and Coffee through their respective Core servers. There are no phase controls.
+This document records the author’s requested introduction to a new architecture tutorial series. It is presented as **Chapter 1 — Core Architecture** in this independent tutorial app. The introduction contains fifteen actual slides, each with its own URL position. Slides 1–4 establish the server and transfer, slide 5 compares request types, slide 6 demonstrates messaging, slide 7 combines coins with an editable message, slide 8 follows a Ping/Pong round trip, slides 9–10 introduce Tuna Core and a guessing game, slides 11–12 buy and sell Bitcoin through a trading app, slide 13 introduces Coffee Core alone, slide 14 exchanges Bonsai and Coffee through their respective Core servers, and slide 15 introduces Bridge between one client and three currency Cores. There are no phase controls.
 
 ## Slide 1: Core server
 
@@ -116,11 +116,19 @@ Pause holds travel. Replay, reentry, or reload cancels pending work and restores
 
 This is an application-managed sequential exchange between separate currencies, not a single atomic exchange supplied by Core. The fixed offer is an illustrative agreement, not a market quote, and fees are omitted. Keep these explanations in presenter notes and documentation, with no warnings on the canvas. This author-specified Bonsai/Coffee example leaves Tuna slides 9–12 unchanged.
 
+## Slide 15: one connection, more possibilities
+
+Show exactly **three Core servers**, **one Bridge server**, and **Bucky’s client laptop**. Label the middle service exactly **Bridge**, not Exchange server. Bucky’s laptop connects **only to Bridge**. Bridge has separate connections to **Bonsai Core**, **Coffee Core**, and **Tuna Core**; there are no direct laptop-to-Core wires.
+
+Preserve the established coin identities: **gold Bonsai**, **bronze Coffee**, and **silver Tuna** with its colored tuna fish motif. Add no currency or balance table. Keep the laptop screen readable, with two distinct feature examples: **Trade**, showing an illustrative fixed **1 Bonsai → 20 Coffee** exchange, and a **social post with coin-tip indicators**.
+
+This is a static architecture overview. The examples show what the client can present through its connection to Bridge; they are not clickable demonstrations. Include no actions, request travel, timers, balances, or simulated settlement. Keep the diagram focused on the connections and the two features rather than explaining a settlement protocol.
+
 ## Presentation conventions
 
-Use clean native architecture diagrams and generous, readable labels. Slides advance only through ordinary slide navigation, never automatically. Slides 1–3, 5, 9, and 13 are static teaching states; slides 4, 6, 7, 8, 10, 11, 12, and 14 wait for their initial action button. No additional architecture layers are part of this introduction.
+Use clean native architecture diagrams and generous, readable labels. Slides advance only through ordinary slide navigation, never automatically. Slides 1–3, 5, 9, 13, and 15 are static teaching states; slides 4, 6, 7, 8, 10, 11, 12, and 14 wait for their initial action button. Keep each scene focused on its specified architecture.
 
-The optional author references [server.jpg](/Users/bucky/Downloads/server.jpg) and [server2.jpg](/Users/bucky/Downloads/server2.jpg) informed the server style. They are not app assets or build dependencies. Use original native vector art with crisp professional dimensional/isometric construction in dark navy and blue. Polish the phones to the same dimensional style, keeping the screen content flat and readable. Add the currency’s coin emblem to the server’s upper-right side panel, following that panel’s isometric perspective: Bonsai on slides 1–8, Tuna on slides 9–12, Coffee on slide 13, and the corresponding Bonsai/Coffee emblems on slide 14. All Coffee coin metal is bronze. Tuna uses a silver struck-metal coin with a colored tuna fish motif throughout, including server emblems and receipt indicators.
+The optional author references [server.jpg](/Users/bucky/Downloads/server.jpg) and [server2.jpg](/Users/bucky/Downloads/server2.jpg) informed the server style. They are not app assets or build dependencies. Use original native vector art with crisp professional dimensional/isometric construction in dark navy and blue. Polish the phones to the same dimensional style, keeping the screen content flat and readable. Add the currency’s coin emblem to the server’s upper-right side panel, following that panel’s isometric perspective: Bonsai on slides 1–8, Tuna on slides 9–12, Coffee on slide 13, and the corresponding Bonsai/Coffee emblems on slide 14. Slide 15 reuses all three established currency emblems. All Coffee coin metal is bronze; Bonsai remains gold. Tuna uses a silver struck-metal coin with a colored tuna fish motif throughout, including server emblems and receipt indicators.
 
 On slide 4, stack **To** above an input containing **Ty**, then **Amount** above an input containing **1**. Place the **Send** button at the bottom, with the Bonsai coin logo to the right of the Send text. Keep both fields read-only.
 

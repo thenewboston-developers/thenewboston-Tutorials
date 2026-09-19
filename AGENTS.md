@@ -2,13 +2,13 @@
 
 ## Scope
 
-This is the independent **thenewboston-Tutorials** React, TypeScript, and Vite app. It contains **Chapter 1 — Core Architecture**, fourteen slides with route id `core-architecture`. Work only in this repository unless the task explicitly names another. Do not change existing `.git`, `.gitignore`, or `.idea` configuration without a relevant request.
+This is the independent **thenewboston-Tutorials** React, TypeScript, and Vite app. It contains **Chapter 1 — Core Architecture**, fifteen slides with route id `core-architecture`. Work only in this repository unless the task explicitly names another. Do not change existing `.git`, `.gitignore`, or `.idea` configuration without a relevant request.
 
 The self-contained teaching source is [docs/core-architecture-source.md](docs/core-architecture-source.md); the visual and interaction specification is [docs/chapter-01-art-direction.md](docs/chapter-01-art-direction.md). Read the relevant parts before changing lesson behavior. Optional Core/DBDC references provide author context, not required filesystem dependencies. Do not import or load runtime code, assets, or data from sibling repositories.
 
 ## Structure
 
-Keep chapter metadata in `src/chapters/chapter-01.ts`, use the shared `Chapter`/`Slide` types, and register chapters in numeric order. Chapter 1 is the initial and invalid-chapter fallback. Preserve stable chapter and visual ids; slide URLs use 1-based positions. The fourteen visual ids, in order, are:
+Keep chapter metadata in `src/chapters/chapter-01.ts`, use the shared `Chapter`/`Slide` types, and register chapters in numeric order. Chapter 1 is the initial and invalid-chapter fallback. Preserve stable chapter and visual ids; slide URLs use 1-based positions. The fifteen visual ids, in order, are:
 
 1. `architecture-core-server`
 2. `architecture-core-mint`
@@ -24,12 +24,13 @@ Keep chapter metadata in `src/chapters/chapter-01.ts`, use the shared `Chapter`/
 12. `architecture-bitcoin-sell`
 13. `architecture-coffee-core`
 14. `architecture-native-trade`
+15. `architecture-bridge`
 
 Keep three or four clear presenter points per slide. `sourcePath` refers to the authored document in this repository and is author metadata, not a runtime dependency. Chapter 1 uses ordinary slide navigation and declares no manual phases. Preserve navigation controls, browser history, and keyboard access; typing in a form must not trigger slide shortcuts.
 
 ## Layout and content
 
-Use the existing React/CSS stack without adding animation dependencies. Keep the fixed 2560 × 1440 scene and uniform scaling. Titles and narration belong in the sidebar; canvas labels explain the diagram. Preserve the dark navy/blue dimensional server, readable flat phone screens, native editable labels, and the perspective-aligned currency coin emblem. Slides 1–8 use Bonsai; slides 9–12 use Tuna, represented by a silver struck-metal coin with a colored tuna fish motif. Keep the stable id/visual `architecture-bacoin-core` unchanged despite the display-name change. Keep Tuna as the default currency/Core for subsequent new examples unless the author specifies otherwise. Slide 13 introduces Coffee Core; slide 14 explicitly uses Bonsai and Coffee without changing slides 9–12. All Coffee coin metal is bronze, including server emblems, request graphics, and receipts. Any human portrait must be a generated image, never an SVG face.
+Use the existing React/CSS stack without adding animation dependencies. Keep the fixed 2560 × 1440 scene and uniform scaling. Titles and narration belong in the sidebar; canvas labels explain the diagram. Preserve the dark navy/blue dimensional server, readable flat phone screens, native editable labels, and the perspective-aligned currency coin emblem. Slides 1–8 use Bonsai; slides 9–12 use Tuna, represented by a silver struck-metal coin with a colored tuna fish motif. Keep the stable id/visual `architecture-bacoin-core` unchanged despite the display-name change. Keep Tuna as the default currency/Core for subsequent new examples unless the author specifies otherwise. Slide 13 introduces Coffee Core; slide 14 explicitly uses Bonsai and Coffee without changing slides 9–12. All Coffee coin metal is bronze, including server emblems, request graphics, and receipts. Slide 15 combines the existing gold Bonsai, bronze Coffee, and silver Tuna identities. Any human portrait must be a generated image, never an SVG face.
 
 Put the corresponding Bonsai Core, Tuna Core, or Coffee Core label above the server, balance tables to its right, and connected phones below. Wires curve from phone tops to Core without arrowheads or outside Connected labels. Slide 3’s green Connected status belongs inside its phone. Slides 6 and 7 center the whole composition vertically, with balanced space above the Core label and below the Bucky/Ty names; preserve scale and relative positions, wires, and packet paths. Slides 8 and 10 use the same balanced composition with Bucky’s phone and a laptop. Do not add the old standalone “100 minted” caption or adjacent coin.
 
@@ -50,6 +51,8 @@ Preserve these scene contracts:
 
 - Slide 13 matches slides 1 and 9’s standalone server composition, labeled Coffee Core with its bronze Coffee coin/emblem; show no devices or balance table.
 - Slide 14 shows Bucky offering fixed 1 Bonsai for 20 Coffee to Carla, with distinct Bonsai Core and Coffee Core servers and no balance table. The first manual action, Send offer, sends only the proposal Bucky→Bonsai Core→Carla. Keep Carla’s phone screen entirely blank on entry and through both offer legs, with no labels, icons, or buttons. Only at phone arrival reveal the complete offer with Accept and Decline. Wait for Carla’s manual Accept; Decline has no implemented action. Accept sends her acceptance plus 20 Coffee Carla→Coffee Core→Bucky. Only arrival at Bucky triggers automatic 1 Bonsai Bucky→Bonsai Core→Carla. Exactly two manual actions, one exchange per reset, no automatic acceptance or early Bonsai payment. Describe the application-managed sequential exchange and omitted fees only in notes/docs; add no canvas warnings.
+
+- Slide 15 is a static overview with exactly three currency Cores, one server labeled Bridge, and Bucky’s one client laptop. Connect the laptop only to Bridge; connect Bridge separately to Bonsai Core, Coffee Core, and Tuna Core. Do not draw laptop-to-Core wires or rename Bridge as an exchange server. Show two distinct laptop features: Trade with a fixed illustrative 1 Bonsai → 20 Coffee example, and social posting with coin-tip indicators. Preserve the three coin styles. No actions, request travel, timers, balances, new currencies, or simulated settlement.
 
 Fees stay in notes/docs, not canvas arithmetic. Real Core requests include a configured fee, including data-only requests. Accounts 123/456/789 are shortened teaching labels. Administrative starting balances do not mean ordinary wallets can mint. Core records precede app delivery; app receipt does not create the account credit.
 

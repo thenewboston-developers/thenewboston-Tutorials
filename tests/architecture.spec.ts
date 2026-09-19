@@ -132,7 +132,7 @@ for (const reducedMotion of ['no-preference', 'reduce'] as const) {
   }
 }
 
-test('fourteen architecture slides have direct routes, bounded navigation, keyboard shortcuts, and history without phase controls', async ({
+test('fifteen architecture slides have direct routes, bounded navigation, keyboard shortcuts, and history without phase controls', async ({
   page,
 }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' })
@@ -147,7 +147,7 @@ test('fourteen architecture slides have direct routes, bounded navigation, keybo
     name: 'Animation phase controls',
   })
   const scene = page.locator('.architecture-scene')
-  await expect(progress.getByRole('button')).toHaveCount(14)
+  await expect(progress.getByRole('button')).toHaveCount(15)
   await expect(previous).toBeDisabled()
   await expect(phaseControls).toHaveCount(0)
   await expect(scene).toContainText('Bonsai Core')
@@ -247,9 +247,18 @@ test('fourteen architecture slides have direct routes, bounded navigation, keybo
   await expect(page).toHaveURL(new RegExp(`${chapterPath}/14$`))
   await expect(page.getByTestId('native-trade-demo')).toBeVisible()
   await expect(phaseControls).toHaveCount(0)
+  await expect(next).toBeEnabled()
+  await next.click()
+  await expect(page).toHaveURL(new RegExp(`${chapterPath}/15$`))
+  await expect(page.getByTestId('bridge-demo')).toBeVisible()
+  await expect(phaseControls).toHaveCount(0)
   await expect(next).toBeDisabled()
   await page.keyboard.press('ArrowRight')
+  await expect(page).toHaveURL(new RegExp(`${chapterPath}/15$`))
+
+  await page.goBack()
   await expect(page).toHaveURL(new RegExp(`${chapterPath}/14$`))
+  await expect(page.getByTestId('native-trade-demo')).toBeVisible()
 
   await page.goBack()
   await expect(page).toHaveURL(new RegExp(`${chapterPath}/13$`))
@@ -330,6 +339,9 @@ test('fourteen architecture slides have direct routes, bounded navigation, keybo
   await page.goForward()
   await expect(page).toHaveURL(new RegExp(`${chapterPath}/14$`))
   await expect(page.getByTestId('native-trade-demo')).toBeVisible()
+  await page.goForward()
+  await expect(page).toHaveURL(new RegExp(`${chapterPath}/15$`))
+  await expect(page.getByTestId('bridge-demo')).toBeVisible()
   await next.focus()
   await page.keyboard.press('Home')
   await expect(page).toHaveURL(new RegExp(`${chapterPath}/1$`))
@@ -337,7 +349,7 @@ test('fourteen architecture slides have direct routes, bounded navigation, keybo
   await page.keyboard.press('ArrowLeft')
   await expect(page).toHaveURL(new RegExp(`${chapterPath}/1$`))
   await page.keyboard.press('End')
-  await expect(page).toHaveURL(new RegExp(`${chapterPath}/14$`))
+  await expect(page).toHaveURL(new RegExp(`${chapterPath}/15$`))
 })
 
 test('Core waits for a clicked request and pause holds settlement', async ({

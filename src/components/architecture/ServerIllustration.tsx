@@ -1,14 +1,20 @@
 import { useId } from 'react'
+import type { ReactNode } from 'react'
 import { Coin } from '../graphics/Coin'
 
 export function ServerIllustration({
   connected = false,
   currency = 'bonsai',
+  accent = 'blue',
+  emblem,
 }: {
   connected?: boolean
   currency?: 'bonsai' | 'tuna' | 'bitcoin' | 'coffee'
+  accent?: 'blue' | 'teal'
+  emblem?: ReactNode
 }) {
   const id = useId()
+  const teal = accent === 'teal'
   const front = `${id}-front`
   const side = `${id}-side`
   const top = `${id}-top`
@@ -26,8 +32,8 @@ export function ServerIllustration({
           <stop offset="1" stopColor="#1c2f48" />
         </linearGradient>
         <linearGradient id={top} x1="0" y1="0" x2="1" y2="1">
-          <stop stopColor="#4388c7" />
-          <stop offset="1" stopColor="#2b5d93" />
+          <stop stopColor={teal ? '#39999e' : '#4388c7'} />
+          <stop offset="1" stopColor={teal ? '#236973' : '#2b5d93'} />
         </linearGradient>
         <linearGradient id={rack} x1="0" y1="0" x2="0" y2="1">
           <stop stopColor="#718ba5" />
@@ -51,8 +57,8 @@ export function ServerIllustration({
           width="188"
           height="91"
           rx="5"
-          fill="#255683"
-          stroke="#6099c7"
+          fill={teal ? '#245d67' : '#255683'}
+          stroke={teal ? '#68b4bc' : '#6099c7'}
           strokeWidth="1.4"
         />
         {Array.from({ length: 10 }, (_, index) => (
@@ -63,13 +69,17 @@ export function ServerIllustration({
             width="7"
             height="66"
             rx="2"
-            fill="#142e4b"
+            fill={teal ? '#153948' : '#142e4b'}
           />
         ))}
       </g>
 
       <g transform="matrix(1 .2875 0 1 113 83)">
-        <path d="M1 2h237" stroke="#74acd6" strokeWidth="2" />
+        <path
+          d="M1 2h237"
+          stroke={teal ? '#87c9cd' : '#74acd6'}
+          strokeWidth="2"
+        />
         <path d="M8 12v220l221 0" fill="none" stroke="#4b637e" />
         <path d="M238 2v241" stroke="#122139" strokeWidth="4" />
         <rect x="15" y="28" width="211" height="196" rx="3" fill="#102035" />
@@ -160,9 +170,11 @@ export function ServerIllustration({
           strokeWidth="1.5"
         />
         <path d="M25 29h96v158H25Z" fill="#1b2e47" />
-        <foreignObject x="27" y="39" width="92" height="92">
-          <Coin kind={currency} size={92} />
-        </foreignObject>
+        {emblem ?? (
+          <foreignObject x="27" y="39" width="92" height="92">
+            <Coin kind={currency} size={92} />
+          </foreignObject>
+        )}
         <g stroke="#0d1c30" strokeWidth="3.5" strokeLinecap="round">
           {Array.from({ length: 6 }, (_, index) => (
             <path key={index} d={`M38 ${154 + index * 8}h70`} />
@@ -182,7 +194,7 @@ export function ServerIllustration({
       <path
         d="m113 83 147-67 240 69"
         fill="none"
-        stroke="#578ab8"
+        stroke={teal ? '#58a6b0' : '#578ab8'}
         strokeWidth="1.5"
       />
       <path
@@ -191,7 +203,11 @@ export function ServerIllustration({
         stroke="#101e31"
         strokeWidth="3"
       />
-      <path d="m357 152 141-64" stroke="#3e5c7c" strokeWidth="2" />
+      <path
+        d="m357 152 141-64"
+        stroke={teal ? '#3d7883' : '#3e5c7c'}
+        strokeWidth="2"
+      />
     </svg>
   )
 }

@@ -5,7 +5,7 @@ export const chapter01: Chapter = {
   number: 1,
   title: 'Core Architecture',
   description:
-    'An independent fourteen-slide architecture introduction: Core, balances, transfers, messaging, Ping/Pong, a guessing game, Bitcoin trades, and an exchange between two Core currencies.',
+    'An independent fifteen-slide architecture introduction: Core, balances, transfers, messaging, Ping/Pong, a guessing game, currency exchanges, and a Bridge connecting one client to multiple Cores.',
   sourcePath: 'docs/core-architecture-source.md',
   slides: [
     {
@@ -185,6 +185,19 @@ export const chapter01: Chapter = {
         'The apps coordinate these transfers in sequence; this example omits fees and requires exactly two manual actions.',
       ],
       visual: 'architecture-native-trade',
+    },
+    {
+      id: 'architecture-bridge',
+      title: 'One connection. More possibilities.',
+      sentence:
+        'Bucky’s laptop connects to Bridge for trading and social posting with coin tips, while Bridge connects to three currency Cores.',
+      talkingPoints: [
+        'Bucky’s client connects only to Bridge; Bridge separately connects to Bonsai, Coffee, and Tuna Core.',
+        'The laptop shows two distinct features: Trade and a social post with coin tips.',
+        'Gold Bonsai, bronze Coffee, and silver Tuna retain their familiar currency identities.',
+        'The fixed examples illustrate possible features; this static overview does not simulate an exchange or tip.',
+      ],
+      visual: 'architecture-bridge',
     },
   ],
 }

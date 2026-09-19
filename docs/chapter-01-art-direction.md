@@ -1,31 +1,32 @@
 # Chapter 1 — Core Architecture
 
-Source: [the authored architecture request](core-architecture-source.md). This begins an independent architecture tutorial series. Chapter 1 contains fourteen actual URL slides: the server and transfer in slides 1–4, request types in slide 5, messaging in slide 6, an editable coins-with-data example in slide 7, a Ping/Pong round trip in slide 8, Tuna Core with a guessing game in slides 9–10, Bitcoin buying/selling in slides 11–12, Coffee Core alone in slide 13, and a Bonsai/Coffee exchange in slide 14. Keep ordinary slide navigation, with no phase controls.
+Source: [the authored architecture request](core-architecture-source.md). This begins an independent architecture tutorial series. Chapter 1 contains fifteen actual URL slides: the server and transfer in slides 1–4, request types in slide 5, messaging in slide 6, an editable coins-with-data example in slide 7, a Ping/Pong round trip in slide 8, Tuna Core with a guessing game in slides 9–10, Bitcoin buying/selling in slides 11–12, Coffee Core alone in slide 13, a Bonsai/Coffee exchange in slide 14, and a Bridge overview in slide 15. Keep ordinary slide navigation, with no phase controls.
 
-## Fourteen-slide outline
+## Fifteen-slide outline
 
-| Slide | Visual id                    | Presenter title               | Main idea                                                                                    |
-| ----- | ---------------------------- | ----------------------------- | -------------------------------------------------------------------------------------------- |
-| 1     | `architecture-core-server`   | Bonsai Core.                  | Introduce the server alone.                                                                  |
-| 2     | `architecture-core-mint`     | Mint 100.                     | Establish Bucky’s account 123 with 100 coins.                                                |
-| 3     | `architecture-core-connect`  | Connect Bucky’s phone.        | Show the phone connected while its Core record stays at 100.                                 |
-| 4     | `architecture-core-transfer` | Send one coin to Ty.          | Press Send; the request reaches Core before Bucky becomes 99 and Ty becomes 1.               |
-| 5     | `architecture-request-types` | Three ways to use a request.  | Compare coins only, data only, then coins with data, all addressed to Ty.                    |
-| 6     | `architecture-messaging`     | A conversation through Core.  | Bucky sends through Core; Ty’s reply begins typing after two seconds, then waits for Send.   |
-| 7     | `architecture-coins-data`    | A coin and a message.         | Edit an amount and message; Core records the payment before Ty receives both.                |
-| 8     | `architecture-ping-pong`     | Ping. Pong.                   | Start the phone timer; the laptop replies automatically, and Pong’s return stops it.         |
-| 9     | `architecture-bacoin-core`   | Tuna Core.                    | Introduce the next currency’s server alone, with its Tuna emblem.                            |
-| 10    | `architecture-guessing-game` | Guess a number.               | Send a one-coin guess; the app returns either a ten-coin prize or a data-only loss.          |
-| 11    | `architecture-bitcoin-buy`   | Buy Bitcoin.                  | Pay Tuna first; the app’s wallet then sends Bitcoin on the other network.                    |
-| 12    | `architecture-bitcoin-sell`  | Sell Bitcoin.                 | Request an address, manually send Bitcoin, then receive Tuna after confirmed deposit.        |
-| 13    | `architecture-coffee-core`   | Coffee Core.                  | Introduce the second currency’s server alone, with its bronze Coffee emblem.                 |
-| 14    | `architecture-native-trade`  | One Bonsai for twenty Coffee. | Send an offer, accept with Coffee, then automatically return Bonsai after Bucky receives it. |
+| Slide | Visual id                    | Presenter title                     | Main idea                                                                                          |
+| ----- | ---------------------------- | ----------------------------------- | -------------------------------------------------------------------------------------------------- |
+| 1     | `architecture-core-server`   | Bonsai Core.                        | Introduce the server alone.                                                                        |
+| 2     | `architecture-core-mint`     | Mint 100.                           | Establish Bucky’s account 123 with 100 coins.                                                      |
+| 3     | `architecture-core-connect`  | Connect Bucky’s phone.              | Show the phone connected while its Core record stays at 100.                                       |
+| 4     | `architecture-core-transfer` | Send one coin to Ty.                | Press Send; the request reaches Core before Bucky becomes 99 and Ty becomes 1.                     |
+| 5     | `architecture-request-types` | Three ways to use a request.        | Compare coins only, data only, then coins with data, all addressed to Ty.                          |
+| 6     | `architecture-messaging`     | A conversation through Core.        | Bucky sends through Core; Ty’s reply begins typing after two seconds, then waits for Send.         |
+| 7     | `architecture-coins-data`    | A coin and a message.               | Edit an amount and message; Core records the payment before Ty receives both.                      |
+| 8     | `architecture-ping-pong`     | Ping. Pong.                         | Start the phone timer; the laptop replies automatically, and Pong’s return stops it.               |
+| 9     | `architecture-bacoin-core`   | Tuna Core.                          | Introduce the next currency’s server alone, with its Tuna emblem.                                  |
+| 10    | `architecture-guessing-game` | Guess a number.                     | Send a one-coin guess; the app returns either a ten-coin prize or a data-only loss.                |
+| 11    | `architecture-bitcoin-buy`   | Buy Bitcoin.                        | Pay Tuna first; the app’s wallet then sends Bitcoin on the other network.                          |
+| 12    | `architecture-bitcoin-sell`  | Sell Bitcoin.                       | Request an address, manually send Bitcoin, then receive Tuna after confirmed deposit.              |
+| 13    | `architecture-coffee-core`   | Coffee Core.                        | Introduce the second currency’s server alone, with its bronze Coffee emblem.                       |
+| 14    | `architecture-native-trade`  | One Bonsai for twenty Coffee.       | Send an offer, accept with Coffee, then automatically return Bonsai after Bucky receives it.       |
+| 15    | `architecture-bridge`        | One connection. More possibilities. | Connect one client to Bridge, which serves trade and social features through three currency Cores. |
 
 ## Visual language and layout
 
-Use large, editable native graphics: servers labeled **Bonsai Core** on slides 1–8, **Tuna Core** on slides 9–12, **Coffee Core** alone on slide 13, and **Bonsai Core** / **Coffee Core** on slide 14, with balance tables where specified, connected phones, coin symbols, requests, and messages. No generated artwork is needed, so the metadata has no artwork briefs. Any reused human portrait must remain an established generated image, never an SVG face.
+Use large, editable native graphics: servers labeled **Bonsai Core** on slides 1–8, **Tuna Core** on slides 9–12, **Coffee Core** alone on slide 13, **Bonsai Core** / **Coffee Core** on slide 14, and all three alongside **Bridge** on slide 15, with balance tables where specified, connected phones, coin symbols, requests, and messages. No generated artwork is needed, so the metadata has no artwork briefs. Any reused human portrait must remain an established generated image, never an SVG face.
 
-The server style follows the user’s optional [first reference](/Users/bucky/Downloads/server.jpg) and [second reference](/Users/bucky/Downloads/server2.jpg), neither of which is an app asset or build dependency: crisp dimensional/isometric construction, dark navy and blue faces, clearly defined rack details, and restrained indicator lights. Build original native vector artwork with these qualities. Give the phones a coherent dimensional finish while keeping their screens flat and readable. Place the corresponding Bonsai, Tuna, or Coffee coin emblem on the server’s upper-right side panel, aligned with its isometric perspective. The Tuna coin is silver struck metal with a colored tuna fish motif; preserve that treatment in the server emblem, prize, payment, and receipt graphics. Coffee coin metal is bronze throughout, including its server emblem, request graphics, and receipt indicators.
+The server style follows the user’s optional [first reference](/Users/bucky/Downloads/server.jpg) and [second reference](/Users/bucky/Downloads/server2.jpg), neither of which is an app asset or build dependency: crisp dimensional/isometric construction, dark navy and blue faces, clearly defined rack details, and restrained indicator lights. Build original native vector artwork with these qualities. Give the phones a coherent dimensional finish while keeping their screens flat and readable. Place the corresponding Bonsai, Tuna, or Coffee coin emblem on the server’s upper-right side panel, aligned with its isometric perspective. The Tuna coin is silver struck metal with a colored tuna fish motif; preserve that treatment in the server emblem, prize, payment, and receipt graphics. Coffee coin metal is bronze throughout, including its server emblem, request graphics, and receipt indicators. Bonsai stays gold; slide 15 reuses these three currency styles without introducing another coin.
 
 Place each **Bonsai Core**, **Tuna Core**, or **Coffee Core** label above its corresponding server. Balance tables sit to the right of their server. Show the starting 100 through the balance table; remove the standalone **100 minted** caption and its adjacent coin from every slide.
 
@@ -162,6 +163,14 @@ Exactly two manual actions start this sequence. Use one finite exchange per demo
 
 The applications coordinate separate currency transfers in sequence. Do not describe this as atomic settlement provided by Core. Explain the omitted fees and illustrative fixed offer only in presenter notes/docs. The explicit Bonsai/Coffee choice is an exception to the default Tuna examples; slides 9–12 remain unchanged.
 
+## Slide 15: Bridge overview
+
+Use exactly five main objects: **Bonsai Core**, **Coffee Core**, **Tuna Core**, one server labeled exactly **Bridge**, and Bucky’s client laptop. Give Bridge its own readable label and keep the servers and laptop in the established dimensional visual style. Draw only the client-to-Bridge connection and the three separate Bridge-to-Core connections. No direct laptop-to-Core path appears. Bridge is the shared service for the displayed features; do not label it Exchange server.
+
+Show two visually distinct, simple examples on the laptop’s flat readable screen: **Trade**, with a fixed illustrative **1 Bonsai → 20 Coffee** example, and a **social post with coin-tip indicators**. Preserve gold Bonsai, bronze Coffee, and silver Tuna. Keep the example content sparse and clearly subordinate to the architecture; no account balances or additional currencies are needed.
+
+This is a static overview with visual examples only. Do not add action buttons, request travel, timers, balance changes, or simulated settlement. The composition teaches one client connection to Bridge and three separate currency connections, without explaining an exchange protocol. Keep ordinary manual slide navigation.
+
 ## Source distinctions kept outside the canvas
 
 The requested arithmetic deliberately omits transaction fees: **100 − 1 = 99**, with Ty receiving **1**. Preserve those figures for slide 4. Slide 7 continues from **99 / 1** and defaults to **98 / 2**. With an edited amount, its records become **99 − amount** and **1 + amount**; the receipt remains **+amount**, never Ty’s total balance. Slide 10 starts a separate Tuna example at **100 / 100**; its one-coin request yields **99 / 101**, followed by **109 / 91** for a ten-coin winning reply or unchanged **99 / 101** for a data-only loss. These figures also omit fees on both accepted requests. The actual Core implementation charges its configured fee in addition to the transfer amount; a data-only block has a zero recipient amount but still incurs the configured transaction fee. Omitting coin accounting from the messaging view does not imply free requests. Mention these simplifications briefly in presenter notes rather than adding fee labels to the diagrams.
@@ -170,7 +179,7 @@ Account labels **123**, **456**, and **789** are readable teaching examples, not
 
 “Mint 100” establishes the illustrative starting balance. It must not imply that an ordinary connected wallet can arbitrarily raise its balance or that connecting mints coins. The supplied administration tools can create account records and set starting balances; this chapter need not introduce that setup interface.
 
-Core checks and saves the block and balances before sending updates to connected apps. The receiving application interprets and displays the payload. Payment submission and authenticated live connections are distinct channels in the supplied implementation; the simple diagram does not assert that ordinary payments are submitted over the live connection. Keep these distinctions while using the requested fourteen-slide scope.
+Core checks and saves the block and balances before sending updates to connected apps. The receiving application interprets and displays the payload. Payment submission and authenticated live connections are distinct channels in the supplied implementation; the simple diagram does not assert that ordinary payments are submitted over the live connection. Keep these distinctions while using the requested fifteen-slide scope.
 
 ### Bitcoin roles and confirmation
 
@@ -192,7 +201,7 @@ The following optional local author references were used to check these distinct
 
 ## Controls and review
 
-Use ordinary chapter and slide navigation for all fourteen slides, with no phase controls. Preserve existing navigation shortcuts. Pause/resume and Replay stay outside the canvas; Replay resets the current slide without changing its URL. Slides 4, 6, 7, 8, 10, 11, 12, and 14 wait for their initial action button in both normal and reduced motion. Never advance slides on a timer.
+Use ordinary chapter and slide navigation for all fifteen slides, with no phase controls. Preserve existing navigation shortcuts. Pause/resume and Replay stay outside the canvas; Replay resets the current slide without changing its URL. Slides 4, 6, 7, 8, 10, 11, 12, and 14 wait for their initial action button in both normal and reduced motion. Never advance slides on a timer.
 
 Inspect every route at desktop and mobile sizes in normal and reduced motion. Verify server-only slide 1, Bucky-only minting on slide 2, the green status inside slide 3’s phone, and slide 4 waiting until pointer or keyboard Send activation. Check one transfer despite repeated activation, request arrival before balance changes and Ty’s row, and reset behavior. Verify the comparison order Coins only / Data only / Coins + data, To Ty on each card, exact examples, Payload field labels, no Data/Empty row in Coins only, and no amount in Data only. Test the initial message fields, immediate clearing on Send, Bucky’s request path, Ty’s received bubble only on arrival, and reply typing beginning exactly two seconds later without sending. Verify the roughly 160 ms character cadence and that Ty’s Send remains disabled until the complete reply is visible. Verify Ty’s manual Send clears his field, sends the reply through Core, and reveals Bucky’s received bubble only on arrival. The final state must have two incoming bubbles and two empty fields, with no further send until a reset. Check pause/resume during both the delay and partial typing, reduced-motion timing, and cancellation/reset on Replay, reentry, and reload. Confirm Bucky/Ty labels remain beneath the phones, the read-only To inputs show the opposite recipient above Message, and no contact-name header or Amount field appears.
 
@@ -207,5 +216,7 @@ For slides 11–12, verify both devices connect to both labeled networks, the Bi
 For slide 13, verify the standalone layout matches slides 1 and 9, with the Coffee Core label and bronze Coffee emblem.
 
 For slide 14, verify the fixed 1-Bonsai/20-Coffee offer, keyboard/pointer Send offer, and delivery through Bonsai Core before Carla’s offer and Accept/Decline buttons appear. Check her screen is entirely blank initially and through both offer legs, with no labels, icons, or buttons. Confirm Decline has no implemented action. Accept must send the acceptance plus 20 Coffee through Coffee Core; only its arrival at Bucky starts the automatic 1-Bonsai return through Bonsai Core. Check the final receipt waits for Carla, exactly two manual actions suffice, repeated activation is guarded, and no table or early Bonsai transfer appears. Exercise pause, reset during every route, and reduced motion retaining the manual Accept boundary.
+
+For slide 15, verify exactly three Cores, one Bridge, and one laptop; only four connections exist, with none directly linking laptop to Core. Check the exact Bridge label, the two readable laptop features, the illustrative fixed trade, coin-tip indicators, and the three preserved coin materials. Confirm no action controls, travel, timers, balances, or settlement simulation appear in either motion preference.
 
 Across all slides, check text fit and canvas bounds, labels above servers, tables to their right, no standalone mint caption or adjacent coin, the server’s perspective-aligned currency emblem, curved wire endpoints, and no outside connection-status labels or arrowheads.

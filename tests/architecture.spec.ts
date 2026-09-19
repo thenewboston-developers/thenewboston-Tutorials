@@ -132,7 +132,7 @@ for (const reducedMotion of ['no-preference', 'reduce'] as const) {
   }
 }
 
-test('twelve architecture slides have direct routes, bounded navigation, keyboard shortcuts, and history without phase controls', async ({
+test('fourteen architecture slides have direct routes, bounded navigation, keyboard shortcuts, and history without phase controls', async ({
   page,
 }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' })
@@ -147,12 +147,26 @@ test('twelve architecture slides have direct routes, bounded navigation, keyboar
     name: 'Animation phase controls',
   })
   const scene = page.locator('.architecture-scene')
-  await expect(progress.getByRole('button')).toHaveCount(12)
+  await expect(progress.getByRole('button')).toHaveCount(14)
   await expect(previous).toBeDisabled()
   await expect(phaseControls).toHaveCount(0)
   await expect(scene).toContainText('Bonsai Core')
   await expect(page.getByTestId('bucky-balance')).toHaveCount(0)
   await expect(page.getByTestId('bucky-phone')).toHaveCount(0)
+  const serverPlacement = () =>
+    scene.locator('.architecture-server').evaluate((server) => {
+      const frame = server
+        .closest('.architecture-scene')!
+        .getBoundingClientRect()
+      const box = server.getBoundingClientRect()
+      return {
+        x: (box.x - frame.x) / frame.width,
+        y: (box.y - frame.y) / frame.height,
+        width: box.width / frame.width,
+        height: box.height / frame.height,
+      }
+    })
+  const standalonePlacement = await serverPlacement()
 
   await next.click()
   await expect(page).toHaveURL(new RegExp(`${chapterPath}/2$`))
@@ -217,9 +231,36 @@ test('twelve architecture slides have direct routes, bounded navigation, keyboar
     'sell',
   )
   await expect(phaseControls).toHaveCount(0)
+  await expect(next).toBeEnabled()
+  await next.click()
+  await expect(page).toHaveURL(new RegExp(`${chapterPath}/13$`))
+  await expect(scene.getByText('Coffee Core', { exact: true })).toBeVisible()
+  await expect(scene.getByRole('table')).toHaveCount(0)
+  await expect(scene.locator('input, textarea, button')).toHaveCount(0)
+  await expect(page.getByTestId('bucky-phone')).toHaveCount(0)
+  const coffeePlacement = await serverPlacement()
+  for (const axis of ['x', 'y', 'width', 'height'] as const) {
+    expect(coffeePlacement[axis]).toBeCloseTo(standalonePlacement[axis], 3)
+  }
+  await expect(next).toBeEnabled()
+  await next.click()
+  await expect(page).toHaveURL(new RegExp(`${chapterPath}/14$`))
+  await expect(page.getByTestId('native-trade-demo')).toBeVisible()
+  await expect(phaseControls).toHaveCount(0)
   await expect(next).toBeDisabled()
   await page.keyboard.press('ArrowRight')
+  await expect(page).toHaveURL(new RegExp(`${chapterPath}/14$`))
+
+  await page.goBack()
+  await expect(page).toHaveURL(new RegExp(`${chapterPath}/13$`))
+  await expect(scene.getByText('Coffee Core', { exact: true })).toBeVisible()
+
+  await page.goBack()
   await expect(page).toHaveURL(new RegExp(`${chapterPath}/12$`))
+  await expect(page.getByTestId('bitcoin-trade-demo')).toHaveAttribute(
+    'data-mode',
+    'sell',
+  )
 
   await page.goBack()
   await expect(page).toHaveURL(new RegExp(`${chapterPath}/11$`))
@@ -283,6 +324,12 @@ test('twelve architecture slides have direct routes, bounded navigation, keyboar
     'data-mode',
     'sell',
   )
+  await page.goForward()
+  await expect(page).toHaveURL(new RegExp(`${chapterPath}/13$`))
+  await expect(scene.getByText('Coffee Core', { exact: true })).toBeVisible()
+  await page.goForward()
+  await expect(page).toHaveURL(new RegExp(`${chapterPath}/14$`))
+  await expect(page.getByTestId('native-trade-demo')).toBeVisible()
   await next.focus()
   await page.keyboard.press('Home')
   await expect(page).toHaveURL(new RegExp(`${chapterPath}/1$`))
@@ -290,7 +337,7 @@ test('twelve architecture slides have direct routes, bounded navigation, keyboar
   await page.keyboard.press('ArrowLeft')
   await expect(page).toHaveURL(new RegExp(`${chapterPath}/1$`))
   await page.keyboard.press('End')
-  await expect(page).toHaveURL(new RegExp(`${chapterPath}/12$`))
+  await expect(page).toHaveURL(new RegExp(`${chapterPath}/14$`))
 })
 
 test('Core waits for a clicked request and pause holds settlement', async ({

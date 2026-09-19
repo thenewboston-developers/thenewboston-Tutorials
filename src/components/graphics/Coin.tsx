@@ -2,6 +2,7 @@ import { useId } from 'react'
 import { BonsaiArtwork } from './BonsaiArtwork'
 import { TunaArtwork } from './TunaArtwork'
 import { BitcoinArtwork } from './BitcoinArtwork'
+import { CoffeeArtwork } from './CoffeeArtwork'
 import './coin-artwork.css'
 
 function CoinSprig({ flip = false }: { flip?: boolean }) {
@@ -37,7 +38,7 @@ export function Coin({
   size = 180,
   label,
 }: {
-  kind: 'bonsai' | 'tuna' | 'bitcoin'
+  kind: 'bonsai' | 'tuna' | 'bitcoin' | 'coffee'
   size?: number
   label?: string
 }) {
@@ -45,7 +46,9 @@ export function Coin({
   const [light, mid, shade, ink] =
     kind === 'tuna'
       ? ['#f5f8fb', '#c1cbd4', '#788997', '#435663']
-      : ['#fff1aa', '#e7b650', '#a77422', '#725023']
+      : kind === 'coffee'
+        ? ['#f0caa8', '#bc8352', '#865033', '#533324']
+        : ['#fff1aa', '#e7b650', '#a77422', '#725023']
   return (
     <div
       className={`vision-coin coin-${kind} coin-illustrated`}
@@ -163,6 +166,11 @@ export function Coin({
         {kind === 'bitcoin' && (
           <g transform="translate(31 27)">
             <BitcoinArtwork size={194} />
+          </g>
+        )}
+        {kind === 'coffee' && (
+          <g transform="translate(31 27)">
+            <CoffeeArtwork size={194} />
           </g>
         )}
       </svg>

@@ -1,6 +1,6 @@
 # Core Architecture — authored tutorial request
 
-This document records the author’s requested introduction to a new architecture tutorial series. It is presented as **Chapter 1 — Core Architecture** in this independent tutorial app. The introduction contains twelve actual slides, each with its own URL position. Slides 1–4 establish the server and transfer, slide 5 compares request types, slide 6 demonstrates messaging, slide 7 combines coins with an editable message, slide 8 follows a Ping/Pong round trip, slides 9–10 introduce Tuna Core and a guessing game, and slides 11–12 buy and sell Bitcoin through a trading app. There are no phase controls.
+This document records the author’s requested introduction to a new architecture tutorial series. It is presented as **Chapter 1 — Core Architecture** in this independent tutorial app. The introduction contains fourteen actual slides, each with its own URL position. Slides 1–4 establish the server and transfer, slide 5 compares request types, slide 6 demonstrates messaging, slide 7 combines coins with an editable message, slide 8 follows a Ping/Pong round trip, slides 9–10 introduce Tuna Core and a guessing game, slides 11–12 buy and sell Bitcoin through a trading app, slide 13 introduces Coffee Core alone, and slide 14 exchanges Bonsai and Coffee through their respective Core servers. There are no phase controls.
 
 ## Slide 1: Core server
 
@@ -99,17 +99,34 @@ Each slide permits one cycle. Pause holds travel and confirmation. Replay, reent
 
 The exchange rate is an illustrative constant, not a market quote. **bc1q…bucky** and **bc1q…trade** are shortened placeholders, not usable addresses. No real network request or transaction occurs, fees are omitted, and the confirmation beat promises no real duration or number of confirmations. Explain these points only in presenter notes/documentation. The wallet authorizes spending; the Bitcoin node validates and relays transactions rather than supplying the payout funds. See the [Bitcoin role and confirmation references](chapter-01-art-direction.md#bitcoin-roles-and-confirmation) used to verify these distinctions.
 
+## Slide 13: Coffee Core
+
+Show **Coffee Core** alone in the same standalone server composition as slides 1 and 9, with its Coffee coin emblem. The Coffee coin’s metal is **bronze** throughout, including the server emblem and the following exchange’s coin graphics. Show no phones, table, or request on this introduction slide.
+
+## Slide 14: exchange Bonsai for Coffee
+
+Show Bucky’s and Carla’s phones with **Bonsai Core** and **Coffee Core** as distinct currency services. Bucky’s fixed offer is **1 Bonsai for 20 Coffee**, addressed to Carla. Use readable fixed fields and sparse functional labels; no balance table is needed. Carla’s phone screen starts entirely blank: no labels, icons, offer details, or buttons. It remains blank through Bucky-to-Core and Core-to-Carla travel.
+
+The demonstration has exactly two manual actions:
+
+1. Click **Send offer** on Bucky’s phone. The offer travels **Bucky → Bonsai Core → Carla**. Sending or receiving this offer does not yet send Bucky’s one Bonsai. Only when it reaches Carla’s phone, reveal the complete offer and **Accept** / **Decline** buttons. Wait for Accept; show Decline without implementing a decline path.
+2. Click Carla’s **Accept**. Her acceptance and **20 Coffee** travel together **Carla → Coffee Core → Bucky**. Only when this reaches Bucky’s phone does his app automatically send **1 Bonsai** along **Bucky → Bonsai Core → Carla**. No third click is required, and the final receipt waits for Carla’s phone arrival.
+
+Pause holds travel. Replay, reentry, or reload cancels pending work and restores the unsent offer. Reduced motion removes travel while preserving both manual actions: Send offer stops at Carla’s decision, and Accept completes the two subsequent currency transfers in their stated order. One exchange completes the demonstration; repeated activation must not duplicate it.
+
+This is an application-managed sequential exchange between separate currencies, not a single atomic exchange supplied by Core. The fixed offer is an illustrative agreement, not a market quote, and fees are omitted. Keep these explanations in presenter notes and documentation, with no warnings on the canvas. This author-specified Bonsai/Coffee example leaves Tuna slides 9–12 unchanged.
+
 ## Presentation conventions
 
-Use clean native architecture diagrams and generous, readable labels. Slides advance only through ordinary slide navigation, never automatically. Slides 1–3, 5, and 9 are static teaching states; slides 4, 6, 7, 8, 10, 11, and 12 wait for their initial action button. No additional architecture layers are part of this introduction.
+Use clean native architecture diagrams and generous, readable labels. Slides advance only through ordinary slide navigation, never automatically. Slides 1–3, 5, 9, and 13 are static teaching states; slides 4, 6, 7, 8, 10, 11, 12, and 14 wait for their initial action button. No additional architecture layers are part of this introduction.
 
-The optional author references [server.jpg](/Users/bucky/Downloads/server.jpg) and [server2.jpg](/Users/bucky/Downloads/server2.jpg) informed the server style. They are not app assets or build dependencies. Use original native vector art with crisp professional dimensional/isometric construction in dark navy and blue. Polish the phones to the same dimensional style, keeping the screen content flat and readable. Add the currency’s coin emblem to the server’s upper-right side panel, following that panel’s isometric perspective: Bonsai on slides 1–8 and Tuna on slides 9–12. Tuna uses a silver struck-metal coin with a colored tuna fish motif throughout, including server emblems and receipt indicators.
+The optional author references [server.jpg](/Users/bucky/Downloads/server.jpg) and [server2.jpg](/Users/bucky/Downloads/server2.jpg) informed the server style. They are not app assets or build dependencies. Use original native vector art with crisp professional dimensional/isometric construction in dark navy and blue. Polish the phones to the same dimensional style, keeping the screen content flat and readable. Add the currency’s coin emblem to the server’s upper-right side panel, following that panel’s isometric perspective: Bonsai on slides 1–8, Tuna on slides 9–12, Coffee on slide 13, and the corresponding Bonsai/Coffee emblems on slide 14. All Coffee coin metal is bronze. Tuna uses a silver struck-metal coin with a colored tuna fish motif throughout, including server emblems and receipt indicators.
 
 On slide 4, stack **To** above an input containing **Ty**, then **Amount** above an input containing **1**. Place the **Send** button at the bottom, with the Bonsai coin logo to the right of the Send text. Keep both fields read-only.
 
 Apply the author’s visual directions throughout:
 
-- Put the **Bonsai Core** or **Tuna Core** label above its corresponding server.
+- Put the **Bonsai Core**, **Tuna Core**, or **Coffee Core** label above its corresponding server.
 - Place each balance table to the right of its server.
 - Remove the standalone **100 minted** caption and the coin beside that caption from every slide.
 - When a phone is connected, place Core at the top center and Bucky’s phone at the bottom left. Run a gently curved wire from the top of the phone to the left side of Core, with no arrowheads or outside **Connected** labels. Slide 3’s green **Connected** status belongs inside the phone.

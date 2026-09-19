@@ -5,7 +5,7 @@ export const chapter01: Chapter = {
   number: 1,
   title: 'Core Architecture',
   description:
-    'An independent twelve-slide architecture introduction: Core, balances, transfers, messaging, Ping/Pong, a guessing game, and Bitcoin trades through an app.',
+    'An independent fourteen-slide architecture introduction: Core, balances, transfers, messaging, Ping/Pong, a guessing game, Bitcoin trades, and an exchange between two Core currencies.',
   sourcePath: 'docs/core-architecture-source.md',
   slides: [
     {
@@ -160,6 +160,31 @@ export const chapter01: Chapter = {
         'This independent demonstration uses a fixed example rate, placeholder addresses, omitted fees, and simulated Bitcoin confirmation.',
       ],
       visual: 'architecture-bitcoin-sell',
+    },
+    {
+      id: 'architecture-coffee-core',
+      title: 'Coffee Core.',
+      sentence:
+        'Coffee Core introduces the second currency server used in the coming exchange.',
+      talkingPoints: [
+        'This server is Coffee Core, identified by its name and bronze Coffee coin emblem.',
+        'Show the server alone, using the same composition as the earlier Bonsai and Tuna introductions.',
+        'The next example routes Coffee through this server and Bonsai through its own Core.',
+      ],
+      visual: 'architecture-coffee-core',
+    },
+    {
+      id: 'architecture-native-trade',
+      title: 'One Bonsai for twenty Coffee.',
+      sentence:
+        'Send Bucky’s offer, accept it on Carla’s phone, then follow the two currencies through their own Core servers.',
+      talkingPoints: [
+        'Send offer routes the proposal through Bonsai Core; Carla’s screen stays blank until it arrives.',
+        'Carla’s manual Accept sends her acceptance and twenty Coffee through Coffee Core to Bucky.',
+        'Only receipt at Bucky triggers the automatic one-Bonsai transfer through Bonsai Core to Carla.',
+        'The apps coordinate these transfers in sequence; this example omits fees and requires exactly two manual actions.',
+      ],
+      visual: 'architecture-native-trade',
     },
   ],
 }

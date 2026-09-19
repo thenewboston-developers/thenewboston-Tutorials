@@ -8,13 +8,19 @@ export function CoreServer({
 }: {
   compact?: boolean
   connected?: boolean
-  currency?: 'bonsai' | 'tuna'
+  currency?: 'bonsai' | 'tuna' | 'coffee'
 }) {
   return (
     <div
       className={`architecture-server${compact ? ' architecture-server-small' : ''}`}
     >
-      <strong>{currency === 'tuna' ? 'Tuna Core' : 'Bonsai Core'}</strong>
+      <strong>
+        {currency === 'coffee'
+          ? 'Coffee Core'
+          : currency === 'tuna'
+            ? 'Tuna Core'
+            : 'Bonsai Core'}
+      </strong>
       <div className="architecture-server-picture">
         <ServerIllustration connected={connected} currency={currency} />
       </div>
@@ -34,7 +40,13 @@ export function Phone({
   return (
     <div
       className={`architecture-phone ${className}`}
-      data-testid={name.startsWith('Ty') ? 'ty-phone' : 'bucky-phone'}
+      data-testid={
+        name.startsWith('Carla')
+          ? 'carla-phone'
+          : name.startsWith('Ty')
+            ? 'ty-phone'
+            : 'bucky-phone'
+      }
     >
       <div className="architecture-phone-shell">
         <span className="architecture-phone-speaker" />

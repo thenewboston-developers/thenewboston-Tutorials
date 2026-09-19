@@ -267,11 +267,13 @@
   width: 840px;
 }
 .architecture-core-server .architecture-first-core,
-.architecture-bacoin-core .architecture-first-core {
+.architecture-bacoin-core .architecture-first-core,
+.architecture-coffee-core .architecture-first-core {
   top: 400px;
 }
 .architecture-core-server .architecture-server,
-.architecture-bacoin-core .architecture-server {
+.architecture-bacoin-core .architecture-server,
+.architecture-coffee-core .architecture-server {
   transform: scale(1.55);
   transform-origin: center;
 }

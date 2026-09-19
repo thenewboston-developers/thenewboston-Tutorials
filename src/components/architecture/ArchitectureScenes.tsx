@@ -8,6 +8,7 @@ import { CoinsDataScene } from './CoinsDataScene'
 import { PingPongScene } from './PingPongScene'
 import { GuessingGameScene } from './GuessingGameScene'
 import { BitcoinTradingScene } from './BitcoinTradingScene'
+import { NativeTradeScene } from './NativeTradeScene'
 import { AccountTable } from './AccountTable'
 import './architecture.css'
 
@@ -161,7 +162,11 @@ export function ArchitectureScenes({
                   ? 'Bucky’s phone and a trading app connect to both Tuna Core and a Bitcoin node. Buy one Bitcoin by sending 100 Tuna and a receiving Bitcoin address through Core. After receiving payment, the app sends one Bitcoin through the Bitcoin network. The diagram confirms the Bitcoin transaction before showing the receipt on Bucky’s phone.'
                   : visual === 'architecture-bitcoin-sell'
                     ? 'Bucky asks the trading app for a deposit address for one Bitcoin through Tuna Core. After the address arrives, click Send one Bitcoin. The app monitors its deposit address, waits for the Bitcoin confirmation, then sends 100 Tuna through Core. The payment appears on Bucky’s phone only after delivery.'
-                    : 'Three kinds of requests, all addressed to Ty: one coin only; the payload Hello, Ty alone with no amount shown; or one coin with that payload.'
+                    : visual === 'architecture-native-trade'
+                      ? 'A trade between Bonsai and Coffee coins'
+                      : visual === 'architecture-coffee-core'
+                        ? 'Coffee Core is the server for Coffee coins, identified by its bronze coin and colored coffee emblem.'
+                        : 'Three kinds of requests, all addressed to Ty: one coin only; the payload Hello, Ty alone with no amount shown; or one coin with that payload.'
 
   return (
     <div
@@ -173,7 +178,8 @@ export function ArchitectureScenes({
         visual === 'architecture-ping-pong' ||
         visual === 'architecture-guessing-game' ||
         visual === 'architecture-bitcoin-buy' ||
-        visual === 'architecture-bitcoin-sell'
+        visual === 'architecture-bitcoin-sell' ||
+        visual === 'architecture-native-trade'
           ? 'group'
           : 'img'
       }
@@ -186,9 +192,12 @@ export function ArchitectureScenes({
       {visual === 'architecture-messaging' && <MessagingScene />}
       {visual === 'architecture-coins-data' && <CoinsDataScene />}
       {visual === 'architecture-ping-pong' && <PingPongScene paused={paused} />}
-      {visual === 'architecture-bacoin-core' && (
+      {(visual === 'architecture-bacoin-core' ||
+        visual === 'architecture-coffee-core') && (
         <div className="architecture-first-core">
-          <CoreServer currency="tuna" />
+          <CoreServer
+            currency={visual === 'architecture-coffee-core' ? 'coffee' : 'tuna'}
+          />
         </div>
       )}
       {visual === 'architecture-guessing-game' && <GuessingGameScene />}
@@ -198,6 +207,7 @@ export function ArchitectureScenes({
       {visual === 'architecture-bitcoin-sell' && (
         <BitcoinTradingScene mode="sell" />
       )}
+      {visual === 'architecture-native-trade' && <NativeTradeScene />}
     </div>
   )
 }

@@ -11,6 +11,8 @@ export type SceneId =
   | 'architecture-guessing-game'
   | 'architecture-bitcoin-buy'
   | 'architecture-bitcoin-sell'
+  | 'architecture-coffee-core'
+  | 'architecture-native-trade'
 
 export type ArtworkBrief = {
   id: string

@@ -1,0 +1,113 @@
+.architecture-native-coffee-core {
+  position: absolute;
+  top: 820px;
+  left: 980px;
+  width: 600px;
+}
+.architecture-connection-wires .architecture-native-coffee-wire {
+  stroke: #ae8a66;
+}
+.architecture-native-screen {
+  gap: 14px;
+  padding: 20px 22px;
+}
+.architecture-native-screen .architecture-chat-compose {
+  gap: 6px;
+  font-size: 27px;
+}
+.architecture-native-screen .architecture-chat-compose input {
+  height: 60px;
+  padding: 7px 13px;
+  font-size: 34px;
+}
+.architecture-native-terms {
+  display: grid;
+  flex-shrink: 0;
+  gap: 12px;
+  margin: 0;
+  padding: 14px 17px;
+  border: 2px solid #c5d5e2;
+  border-radius: 14px;
+  background: #fff;
+}
+.architecture-native-terms dt {
+  margin-bottom: 2px;
+  color: #526b80;
+  font-size: 25px;
+  line-height: 1.2;
+}
+.architecture-native-terms dd {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin: 0;
+  font-size: 34px;
+  line-height: 1.2;
+}
+.architecture-native-status {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  min-height: 83px;
+  color: #52718a;
+  font-size: 29px;
+  line-height: 1.2;
+}
+.architecture-native-receipt > span {
+  color: #257557;
+  font-size: 26px;
+}
+.architecture-native-receipt > strong {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 5px;
+  color: #257557;
+  font-size: 35px;
+  white-space: nowrap;
+}
+.architecture-native-screen .architecture-chat-send {
+  height: 72px;
+  font-size: 36px;
+}
+.architecture-native-actions {
+  display: grid;
+  flex-shrink: 0;
+  grid-template-columns: 1fr 1fr;
+  gap: 13px;
+}
+.architecture-native-actions .architecture-chat-send {
+  padding: 8px;
+  font-size: 31px;
+}
+.architecture-native-decline {
+  border: 2px solid #b5c5d3;
+  border-radius: 14px;
+  background: #edf2f6;
+  color: #718698;
+  font:
+    550 30px / 1 'Manrope Variable',
+    sans-serif;
+  opacity: 1;
+}
+.architecture-scene .architecture-native-packet {
+  width: 350px;
+  gap: 18px;
+  padding: 18px 22px;
+}
+.architecture-scene .architecture-native-packet-offer {
+  width: 545px;
+}
+.architecture-native-packet-coffee {
+  border-color: #cbb395;
+}
+.architecture-native-packet > div > span {
+  display: block;
+  margin-bottom: 5px;
+  color: #58738a;
+  font-size: 28px;
+}
+.architecture-native-packet p {
+  font-size: 35px;
+  white-space: nowrap;
+}

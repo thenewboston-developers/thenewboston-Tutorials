@@ -38,7 +38,7 @@ function GameBalances({ charged, paid }: { charged: boolean; paid: boolean }) {
     <div className="architecture-coins-data-records" aria-live="polite">
       <table
         className="architecture-accounts"
-        aria-label="Bacoin Core account balances"
+        aria-label="Tuna Core account balances"
       >
         <thead>
           <tr>
@@ -143,7 +143,7 @@ export function GuessingGameScene() {
         <path d={wires.program} />
       </svg>
       <div className="architecture-chat-core">
-        <CoreServer connected currency="bacoin" />
+        <CoreServer connected currency="tuna" />
       </div>
       <GameBalances charged={charged} paid={paid} />
       <Phone
@@ -213,8 +213,8 @@ export function GuessingGameScene() {
                     className="architecture-game-credit"
                     data-testid="game-coin-received"
                   >
-                    <Coin kind="bacoin" size={58} />
-                    <span>+10 Bacoin</span>
+                    <Coin kind="tuna" size={58} />
+                    <span>+10 Tuna</span>
                   </strong>
                 )}
               </div>
@@ -227,7 +227,7 @@ export function GuessingGameScene() {
             onClick={send}
           >
             <span>Send</span>
-            <Coin kind="bacoin" size={54} />
+            <Coin kind="tuna" size={54} />
           </button>
         </div>
       </Phone>
@@ -255,8 +255,8 @@ export function GuessingGameScene() {
               </strong>
               {won && (
                 <div className="architecture-game-prize">
-                  <Coin kind="bacoin" size={66} />
-                  <span>10 Bacoin</span>
+                  <Coin kind="tuna" size={66} />
+                  <span>10 Tuna</span>
                 </div>
               )}
             </>
@@ -267,8 +267,8 @@ export function GuessingGameScene() {
               </span>
               <strong>1–10</strong>
               <div className="architecture-game-prize">
-                <Coin kind="bacoin" size={66} />
-                <span>10 Bacoin prize</span>
+                <Coin kind="tuna" size={66} />
+                <span>10 Tuna prize</span>
               </div>
             </>
           )}
@@ -306,7 +306,7 @@ export function GuessingGameScene() {
               className="architecture-game-packet-amount"
               data-testid="game-packet-amount"
             >
-              <Coin kind="bacoin" size={76} />
+              <Coin kind="tuna" size={76} />
               <strong>{reply ? prize : 1}</strong>
             </div>
           ) : (

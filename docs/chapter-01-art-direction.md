@@ -1,6 +1,6 @@
 # Chapter 1 — Core Architecture
 
-Source: [the authored architecture request](core-architecture-source.md). This begins an independent architecture tutorial series. Chapter 1 contains twelve actual URL slides: the server and transfer in slides 1–4, request types in slide 5, messaging in slide 6, an editable coins-with-data example in slide 7, a Ping/Pong round trip in slide 8, Bacoin Core with a guessing game in slides 9–10, and Bitcoin buying/selling in slides 11–12. Keep ordinary slide navigation, with no phase controls.
+Source: [the authored architecture request](core-architecture-source.md). This begins an independent architecture tutorial series. Chapter 1 contains twelve actual URL slides: the server and transfer in slides 1–4, request types in slide 5, messaging in slide 6, an editable coins-with-data example in slide 7, a Ping/Pong round trip in slide 8, Tuna Core with a guessing game in slides 9–10, and Bitcoin buying/selling in slides 11–12. Keep ordinary slide navigation, with no phase controls.
 
 ## Twelve-slide outline
 
@@ -14,18 +14,18 @@ Source: [the authored architecture request](core-architecture-source.md). This b
 | 6     | `architecture-messaging`     | A conversation through Core. | Bucky sends through Core; Ty’s reply begins typing after two seconds, then waits for Send. |
 | 7     | `architecture-coins-data`    | A coin and a message.        | Edit an amount and message; Core records the payment before Ty receives both.              |
 | 8     | `architecture-ping-pong`     | Ping. Pong.                  | Start the phone timer; the laptop replies automatically, and Pong’s return stops it.       |
-| 9     | `architecture-bacoin-core`   | Bacoin Core.                 | Introduce the next currency’s server alone, with its Bacoin emblem.                        |
+| 9     | `architecture-bacoin-core`   | Tuna Core.                   | Introduce the next currency’s server alone, with its Tuna emblem.                          |
 | 10    | `architecture-guessing-game` | Guess a number.              | Send a one-coin guess; the app returns either a ten-coin prize or a data-only loss.        |
-| 11    | `architecture-bitcoin-buy`   | Buy Bitcoin.                 | Pay Bacoin first; the app’s wallet then sends Bitcoin on the other network.                |
-| 12    | `architecture-bitcoin-sell`  | Sell Bitcoin.                | Request an address, manually send Bitcoin, then receive Bacoin after confirmed deposit.    |
+| 11    | `architecture-bitcoin-buy`   | Buy Bitcoin.                 | Pay Tuna first; the app’s wallet then sends Bitcoin on the other network.                  |
+| 12    | `architecture-bitcoin-sell`  | Sell Bitcoin.                | Request an address, manually send Bitcoin, then receive Tuna after confirmed deposit.      |
 
 ## Visual language and layout
 
-Use large, editable native graphics: a server labeled **Bonsai Core** on slides 1–8 or **Bacoin Core** on slides 9–12, its balance table, connected phones, coin symbols, requests, and messages. No generated artwork is needed, so the metadata has no artwork briefs. Any reused human portrait must remain an established generated image, never an SVG face.
+Use large, editable native graphics: a server labeled **Bonsai Core** on slides 1–8 or **Tuna Core** on slides 9–12, its balance table, connected phones, coin symbols, requests, and messages. No generated artwork is needed, so the metadata has no artwork briefs. Any reused human portrait must remain an established generated image, never an SVG face.
 
-The server style follows the user’s optional [first reference](/Users/bucky/Downloads/server.jpg) and [second reference](/Users/bucky/Downloads/server2.jpg), neither of which is an app asset or build dependency: crisp dimensional/isometric construction, dark navy and blue faces, clearly defined rack details, and restrained indicator lights. Build original native vector artwork with these qualities. Give the phones a coherent dimensional finish while keeping their screens flat and readable. Place the corresponding Bonsai or Bacoin coin emblem on the server’s upper-right side panel, aligned with its isometric perspective.
+The server style follows the user’s optional [first reference](/Users/bucky/Downloads/server.jpg) and [second reference](/Users/bucky/Downloads/server2.jpg), neither of which is an app asset or build dependency: crisp dimensional/isometric construction, dark navy and blue faces, clearly defined rack details, and restrained indicator lights. Build original native vector artwork with these qualities. Give the phones a coherent dimensional finish while keeping their screens flat and readable. Place the corresponding Bonsai or Tuna coin emblem on the server’s upper-right side panel, aligned with its isometric perspective. The Tuna coin is silver struck metal with a colored tuna fish motif; preserve that treatment in the server emblem, prize, payment, and receipt graphics.
 
-Place each **Bonsai Core** or **Bacoin Core** label above its corresponding server. Balance tables sit to the right of their server. Show the starting 100 through the balance table; remove the standalone **100 minted** caption and its adjacent coin from every slide.
+Place each **Bonsai Core** or **Tuna Core** label above its corresponding server. Balance tables sit to the right of their server. Show the starting 100 through the balance table; remove the standalone **100 minted** caption and its adjacent coin from every slide.
 
 Whenever a phone is connected, position Core at the top center and Bucky’s phone at the bottom left. Connect the top of Bucky’s phone to the left side of Core with a gently curved wire. Connection wires have no arrowheads or outside **Connected** labels. Slide 3 instead places a green checkmark and green **Connected** text inside the phone, replacing its coin. Align traveling request graphics with this geometry. On slides 6 and 7, Ty’s phone sits at the bottom right. Vertically center each whole composition so the whitespace above the Bonsai Core label balances the whitespace below the Bucky/Ty names, preserving scale and all relative positions, wires, and packet paths.
 
@@ -73,19 +73,19 @@ Allow one round trip per demonstration. Pause must hold the moving request and e
 
 The timer represents illustrative elapsed presentation time; no network request or benchmark runs. Keep that explanation in notes/documentation, not in an on-canvas disclaimer.
 
-## Slide 9: Bacoin Core alone
+## Slide 9: Tuna Core alone
 
-Use the same scale, placement, and standalone server composition as slide 1. Change the label to **Bacoin Core** and use the Bacoin coin/emblem. Spell it **Bacoin** throughout. No phone, laptop, table, request, or game UI appears here. Bacoin is the default currency/Core for subsequent new examples unless the author specifies otherwise; leave the first eight slides on Bonsai.
+Use the same scale, placement, and standalone server composition as slide 1. Change the label to **Tuna Core** and use a silver struck-metal Tuna coin/emblem with a colored tuna fish motif. Spell the displayed currency **Tuna** throughout; retain the stable id/visual `architecture-bacoin-core`. No phone, laptop, table, request, or game UI appears here. Tuna is the default currency/Core for subsequent new examples unless the author specifies otherwise; leave the first eight slides on Bonsai.
 
 ## Slide 10: paid guess and app response
 
-Follow slide 8’s balanced composition: **Bacoin Core** top center, Bucky’s phone bottom left, and a laptop labeled **Guessing game** bottom right. Place the balance table to Core’s right, with **123 / Bucky / 100** and **789 / App / 100**. Use the same dimensional device finish, readable flat screens, curved wires, and aligned packet paths. The phone has fixed **Amount / 1**, an editable integer guess from **1–10**, default **1**, and a keyboard-accessible **Send** button. The idle laptop says **Pick a number**, shows the range **1–10**, and displays a **10 Bacoin** prize.
+Follow slide 8’s balanced composition: **Tuna Core** top center, Bucky’s phone bottom left, and a laptop labeled **Guessing game** bottom right. Place the balance table to Core’s right, with **123 / Bucky / 100** and **789 / App / 100**. Use the same dimensional device finish, readable flat screens, curved wires, and aligned packet paths. The phone has fixed **Amount / 1**, an editable integer guess from **1–10**, default **1**, and a keyboard-accessible **Send** button. The idle laptop says **Pick a number**, shows the range **1–10**, and displays a **10 Tuna** prize.
 
-Start with no request or result. Send carries one Bacoin plus the submitted guess through **phone → Core → laptop**. At the first Core arrival, save **Bucky 99 / App 101**. The result cannot be chosen or shown before the request reaches the laptop. At laptop receipt, immediately generate the app’s reply:
+Start with no request or result. Send carries one Tuna plus the submitted guess through **phone → Core → laptop**. At the first Core arrival, save **Bucky 99 / App 101**. The result cannot be chosen or shown before the request reaches the laptop. At laptop receipt, immediately generate the app’s reply:
 
 | Submitted guess | Reply                      | Records when reply reaches Core   | Phone display after reply arrives |
 | --------------- | -------------------------- | --------------------------------- | --------------------------------- |
-| 5               | **You win**, amount **10** | **Bucky 109 / App 91**            | **You win** and Bacoin **+10**    |
+| 5               | **You win**, amount **10** | **Bucky 109 / App 91**            | **You win** and Tuna **+10**      |
 | 1–4 or 6–10     | **You lose**, amount **0** | **Bucky 99 / App 101**, unchanged | **You lose**, no coin indicator   |
 
 The reply follows **laptop → Core → phone**. Keep each of the four normal-motion legs approximately **1400 ms**. The phone’s result and receipt wait for its arrival, even though any returned coins are already recorded at Core. The App pays the ten-coin winning reply from its balance. The losing reply carries data only and does not credit Bucky.
@@ -94,27 +94,27 @@ Use a fixed winning number of **5** to make both demonstrations reproducible. Ke
 
 ## Slides 11–12: two networks, one trading app
 
-Keep Bucky’s phone bottom left, **Bacoin Core** top center, and a laptop **Trading app** bottom right. Center a **Bitcoin node** below Core, between the devices. Both phone and laptop connect to both systems. Use blue Bacoin paths and orange Bitcoin paths, with clear labels as well as color. Keep the Bacoin table at Core’s right. Bitcoin ownership is separate from Bacoin records; device BTC labels show only the wallet balance each client has learned. Distinguish confirmed ownership from the later receiving-client notification in the state tables below. Maintain the dimensional device style, curved paths, readable native fields, and balanced overall margins. Keep the spelling Bacoin.
+Keep Bucky’s phone bottom left, **Tuna Core** top center, and a laptop **Trading app** bottom right. Center a **Bitcoin node** below Core, between the devices. Both phone and laptop connect to both systems. Use blue Tuna paths and orange Bitcoin paths, with clear labels as well as color. Keep the Tuna table at Core’s right. Bitcoin ownership is separate from Tuna records; device BTC labels show only the wallet balance each client has learned. Distinguish confirmed ownership from the later receiving-client notification in the state tables below. Maintain the dimensional device style, curved paths, readable native fields, and balanced overall margins. Keep the spelling Tuna.
 
 ### Slide 11: buy Bitcoin
 
-Start Bacoin **Bucky 100 / App 100** and Bitcoin **Bucky 0 / App 1 BTC**. The phone’s read-only fields are **To / Trading app**, **Amount / 100**, and **Bitcoin receiving address / bc1q…bucky**. **Buy 1 BTC** is a real keyboard-accessible button. Show the fixed example rate **100 Bacoin = 1 BTC** without describing it as a current market price.
+Start Tuna **Bucky 100 / App 100** and Bitcoin **Bucky 0 / App 1 BTC**. The phone’s read-only fields are **To / Trading app**, **Amount / 100**, and **Bitcoin receiving address / bc1q…bucky**. **Buy 1 BTC** is a real keyboard-accessible button. Show the fixed example rate **100 Tuna = 1 BTC** without describing it as a current market price.
 
 | Internal animation state | Network state and device displays                                                                                                          |
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | ready                    | Initial records and fields; wait for Buy 1 BTC.                                                                                            |
-| payment-to-core          | Send 100 Bacoin with Bucky’s receiving address from phone to Core.                                                                         |
-| payment-to-app           | Core has saved Bacoin **0 / 200**; deliver the purchase request to the laptop.                                                             |
+| payment-to-core          | Send 100 Tuna with Bucky’s receiving address from phone to Core.                                                                           |
+| payment-to-app           | Core has saved Tuna **0 / 200**; deliver the purchase request to the laptop.                                                               |
 | bitcoin-to-node          | After receiving the request, the app’s wallet authorizes 1 BTC to **bc1q…bucky** through the Bitcoin node/network.                         |
 | confirming               | Show the simulated Bitcoin confirmation beat; ownership has not yet settled and displays remain Bucky 0 / App 1.                           |
 | bitcoin-to-phone         | Confirmed ownership is **Bucky 1 / App 0**. The app displays **0 BTC**; Bucky’s phone still displays **0 BTC** while notification travels. |
-| complete                 | The phone learns the result, displays **1 BTC**, and reveals **+1 BTC**. The app stays at 0 BTC; Bacoin remains **0 / 200**.               |
+| complete                 | The phone learns the result, displays **1 BTC**, and reveals **+1 BTC**. The app stays at 0 BTC; Tuna remains **0 / 200**.                 |
 
-The app supplies the Bitcoin, not the node. Do not start its Bitcoin payout before the laptop receives the Bacoin purchase. Do not show Bitcoin settlement before confirmation, or Bucky’s updated BTC display and receipt before phone arrival.
+The app supplies the Bitcoin, not the node. Do not start its Bitcoin payout before the laptop receives the Tuna purchase. Do not show Bitcoin settlement before confirmation, or Bucky’s updated BTC display and receipt before phone arrival.
 
 ### Slide 12: sell Bitcoin
 
-Initialize independently at the buying example’s completed position: Bacoin **Bucky 0 / App 200**, Bitcoin **Bucky 1 / App 0 BTC**. No progress from slide 11 is required or inherited. The first button is **Request deposit address**; its data requests an address for **1 BTC**. There is no Bacoin transfer during this simplified address exchange.
+Initialize independently at the buying example’s completed position: Tuna **Bucky 0 / App 200**, Bitcoin **Bucky 1 / App 0 BTC**. No progress from slide 11 is required or inherited. The first button is **Request deposit address**; its data requests an address for **1 BTC**. There is no Tuna transfer during this simplified address exchange.
 
 | Internal animation state | Network state and device displays                                                                                                         |
 | ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
@@ -127,11 +127,11 @@ Initialize independently at the buying example’s completed position: Bacoin **
 | deposit-to-node          | Bucky’s wallet sends 1 BTC to the supplied address through the Bitcoin node/network.                                                      |
 | confirming               | Show the simulated confirmation beat; device displays remain Bucky 1 / App 0.                                                             |
 | deposit-to-app           | Confirmed ownership is **Bucky 0 / App 1**. Bucky displays **0 BTC**; the app still displays **0 BTC** while deposit information travels. |
-| payout-to-core           | The app receives the confirmed deposit, updates its display to **1 BTC**, and sends 100 Bacoin toward Core.                               |
-| payout-to-phone          | Core has saved Bacoin **100 / 100**; the incoming result travels to the phone.                                                            |
-| complete                 | Reveal the phone’s **+100 Bacoin**. Bitcoin remains **0 / 1**.                                                                            |
+| payout-to-core           | The app receives the confirmed deposit, updates its display to **1 BTC**, and sends 100 Tuna toward Core.                                 |
+| payout-to-phone          | Core has saved Tuna **100 / 100**; the incoming result travels to the phone.                                                              |
+| complete                 | Reveal the phone’s **+100 Tuna**. Bitcoin remains **0 / 1**.                                                                              |
 
-Monitoring an address is not confirmed receipt. The app must keep displaying 0 BTC while it is still awaiting the confirmed deposit information; update it to 1 BTC only when that information arrives. Keep the app’s Bacoin payout behind both the simulated confirmation and the app’s receipt of that confirmed deposit. No Bacoin credit or Bitcoin send may follow the address request without the second click.
+Monitoring an address is not confirmed receipt. The app must keep displaying 0 BTC while it is still awaiting the confirmed deposit information; update it to 1 BTC only when that information arrives. Keep the app’s Tuna payout behind both the simulated confirmation and the app’s receipt of that confirmed deposit. No Tuna credit or Bitcoin send may follow the address request without the second click.
 
 ### Timing and interaction
 
@@ -141,7 +141,7 @@ Reduced motion waits for the action button, then resolves the current automatic 
 
 ## Source distinctions kept outside the canvas
 
-The requested arithmetic deliberately omits transaction fees: **100 − 1 = 99**, with Ty receiving **1**. Preserve those figures for slide 4. Slide 7 continues from **99 / 1** and defaults to **98 / 2**. With an edited amount, its records become **99 − amount** and **1 + amount**; the receipt remains **+amount**, never Ty’s total balance. Slide 10 starts a separate Bacoin example at **100 / 100**; its one-coin request yields **99 / 101**, followed by **109 / 91** for a ten-coin winning reply or unchanged **99 / 101** for a data-only loss. These figures also omit fees on both accepted requests. The actual Core implementation charges its configured fee in addition to the transfer amount; a data-only block has a zero recipient amount but still incurs the configured transaction fee. Omitting coin accounting from the messaging view does not imply free requests. Mention these simplifications briefly in presenter notes rather than adding fee labels to the diagrams.
+The requested arithmetic deliberately omits transaction fees: **100 − 1 = 99**, with Ty receiving **1**. Preserve those figures for slide 4. Slide 7 continues from **99 / 1** and defaults to **98 / 2**. With an edited amount, its records become **99 − amount** and **1 + amount**; the receipt remains **+amount**, never Ty’s total balance. Slide 10 starts a separate Tuna example at **100 / 100**; its one-coin request yields **99 / 101**, followed by **109 / 91** for a ten-coin winning reply or unchanged **99 / 101** for a data-only loss. These figures also omit fees on both accepted requests. The actual Core implementation charges its configured fee in addition to the transfer amount; a data-only block has a zero recipient amount but still incurs the configured transaction fee. Omitting coin accounting from the messaging view does not imply free requests. Mention these simplifications briefly in presenter notes rather than adding fee labels to the diagrams.
 
 Account labels **123**, **456**, and **789** are readable teaching examples, not usable Core account numbers. The supplied model uses 64-character hexadecimal account numbers. Names identify the people for this introduction; account numbers identify the records.
 
@@ -151,7 +151,7 @@ Core checks and saves the block and balances before sending updates to connected
 
 ### Bitcoin roles and confirmation
 
-The Bitcoin exchange examples use **100 Bacoin = 1 BTC** as a fixed teaching rate, not a quote. They omit both networks’ fees. The shortened strings **bc1q…bucky** and **bc1q…trade** are unusable placeholders. The app makes no real network request or transaction, and no simulated confirmation duration or count is a real acceptance promise. Keep these explanations in notes/documentation rather than adding a canvas disclaimer.
+The Bitcoin exchange examples use **100 Tuna = 1 BTC** as a fixed teaching rate, not a quote. They omit both networks’ fees. The shortened strings **bc1q…bucky** and **bc1q…trade** are unusable placeholders. The app makes no real network request or transaction, and no simulated confirmation duration or count is a real acceptance promise. Keep these explanations in notes/documentation rather than adding a canvas disclaimer.
 
 A wallet controls the signing authority for spending, while network nodes validate and relay the resulting transaction. The trading app’s wallet authorizes the buy payout; Bucky’s wallet authorizes the sell deposit. The node is a connection to the Bitcoin network, not a source of coins. [Bitcoin wallet guide](https://developer.bitcoin.org/devguide/wallets.html), [Bitcoin transaction guide](https://developer.bitcoin.org/devguide/transactions.html).
 
@@ -177,8 +177,8 @@ For slide 7, verify the default 99/1 → 98/2 transfer and an edited valid amoun
 
 For slide 8, verify idle 0.00 s and no auto-start, keyboard/pointer Send Ping, all four roughly 1400 ms travel legs, automatic Pong only after laptop receipt, and the timer stopping only at phone receipt. Pause mid-route and confirm both the request and timer hold. Check one activation per demonstration, replay/reentry/reload cancellation, and reduced-motion completion only after a click with 0.00 s. Inspect balanced vertical margins and the absence of account/amount/table/JSON/Ty elements.
 
-For slide 9, compare the standalone layout with slide 1 and verify the Bacoin spelling and emblem. For slide 10, test default guess 1 and winning guess 5, plus invalid/out-of-range/noninteger input. Verify the initial 100/100, first Core change to 99/101, laptop-only decision, reply-Core win change to 109/91, unchanged loss balances, and phone-only result/coin reveal. Check no coin indicator on loss, no early result, repeated-Send protection, pause on each leg, reduced motion, and all resets returning to guess 1 and 100/100. Keep the fixed answer off the idle canvas.
+For slide 9, compare the standalone layout with slide 1 and verify the Tuna spelling and emblem. For slide 10, test default guess 1 and winning guess 5, plus invalid/out-of-range/noninteger input. Verify the initial 100/100, first Core change to 99/101, laptop-only decision, reply-Core win change to 109/91, unchanged loss balances, and phone-only result/coin reveal. Check no coin indicator on loss, no early result, repeated-Send protection, pause on each leg, reduced motion, and all resets returning to guess 1 and 100/100. Keep the fixed answer off the idle canvas.
 
-For slides 11–12, verify both devices connect to both labeled networks, the Bitcoin node remains lower-center, and both balance systems stay distinct. Buy must save Bacoin 0/200 before app receipt, then settle confirmed Bitcoin ownership to 1/0 only after the simulated confirmation. The app display becomes 0 at bitcoin-to-phone; Bucky’s stays 0 until complete, when it becomes 1 and reveals +1 BTC. Sell must stop after its address reaches the phone; only the second click starts Bitcoin funding. Check confirmed ownership 0/1 after confirmation, Bucky’s display 0 at deposit-to-app, the app display staying 0 until payout-to-core, app receipt/display 1 before its Bacoin payout, Core’s 100/100 before phone +100, and no payout on address request alone. Exercise keyboard buttons, one-cycle guards, pause during confirmation, reset during every automatic segment, reduced motion, and motion-preference changes before/after the sell manual boundary. Check each direct route initializes its own balances.
+For slides 11–12, verify both devices connect to both labeled networks, the Bitcoin node remains lower-center, and both balance systems stay distinct. Buy must save Tuna 0/200 before app receipt, then settle confirmed Bitcoin ownership to 1/0 only after the simulated confirmation. The app display becomes 0 at bitcoin-to-phone; Bucky’s stays 0 until complete, when it becomes 1 and reveals +1 BTC. Sell must stop after its address reaches the phone; only the second click starts Bitcoin funding. Check confirmed ownership 0/1 after confirmation, Bucky’s display 0 at deposit-to-app, the app display staying 0 until payout-to-core, app receipt/display 1 before its Tuna payout, Core’s 100/100 before phone +100, and no payout on address request alone. Exercise keyboard buttons, one-cycle guards, pause during confirmation, reset during every automatic segment, reduced motion, and motion-preference changes before/after the sell manual boundary. Check each direct route initializes its own balances.
 
 Across all slides, check text fit and canvas bounds, labels above servers, tables to their right, no standalone mint caption or adjacent coin, the server’s perspective-aligned currency emblem, curved wire endpoints, and no outside connection-status labels or arrowheads.

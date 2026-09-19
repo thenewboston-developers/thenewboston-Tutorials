@@ -8,13 +8,13 @@ export function CoreServer({
 }: {
   compact?: boolean
   connected?: boolean
-  currency?: 'bonsai' | 'bacoin'
+  currency?: 'bonsai' | 'tuna'
 }) {
   return (
     <div
       className={`architecture-server${compact ? ' architecture-server-small' : ''}`}
     >
-      <strong>{currency === 'bacoin' ? 'Bacoin Core' : 'Bonsai Core'}</strong>
+      <strong>{currency === 'tuna' ? 'Tuna Core' : 'Bonsai Core'}</strong>
       <div className="architecture-server-picture">
         <ServerIllustration connected={connected} currency={currency} />
       </div>

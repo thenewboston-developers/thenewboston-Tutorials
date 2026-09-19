@@ -154,13 +154,13 @@ export function ArchitectureScenes({
           : visual === 'architecture-ping-pong'
             ? 'Bucky’s phone connects through Bonsai Core to a Ping-pong app on a laptop. Press Send Ping to start the round-trip timer. The laptop automatically replies with Pong when Ping arrives. Pong returns through Core, and the timer stops only when Bucky’s phone receives it. Pause holds both travel and timing; Replay resets the demonstration.'
             : visual === 'architecture-bacoin-core'
-              ? 'Bacoin Core is a new server for Bacoin, illustrated with a bacon coin emblem.'
+              ? 'Tuna Core is a new server for Tuna, illustrated with a silver coin with a colored tuna emblem.'
               : visual === 'architecture-guessing-game'
-                ? 'Bucky’s phone and a guessing game on a laptop connect through Bacoin Core. Both accounts start with 100 Bacoin. Send one coin with a whole-number guess from 1 to 10. Core records the entry payment before the app receives the guess. A correct guess returns You win and ten Bacoin through Core; an incorrect guess returns only You lose. The phone shows the result only on arrival. Replay resets the game.'
+                ? 'Bucky’s phone and a guessing game on a laptop connect through Tuna Core. Both accounts start with 100 Tuna. Send one coin with a whole-number guess from 1 to 10. Core records the entry payment before the app receives the guess. A correct guess returns You win and ten Tuna through Core; an incorrect guess returns only You lose. The phone shows the result only on arrival. Replay resets the game.'
                 : visual === 'architecture-bitcoin-buy'
-                  ? 'Bucky’s phone and a trading app connect to both Bacoin Core and a Bitcoin node. Buy one Bitcoin by sending 100 Bacoin and a receiving Bitcoin address through Core. After receiving payment, the app sends one Bitcoin through the Bitcoin network. The diagram confirms the Bitcoin transaction before showing the receipt on Bucky’s phone.'
+                  ? 'Bucky’s phone and a trading app connect to both Tuna Core and a Bitcoin node. Buy one Bitcoin by sending 100 Tuna and a receiving Bitcoin address through Core. After receiving payment, the app sends one Bitcoin through the Bitcoin network. The diagram confirms the Bitcoin transaction before showing the receipt on Bucky’s phone.'
                   : visual === 'architecture-bitcoin-sell'
-                    ? 'Bucky asks the trading app for a deposit address for one Bitcoin through Bacoin Core. After the address arrives, click Send one Bitcoin. The app monitors its deposit address, waits for the Bitcoin confirmation, then sends 100 Bacoin through Core. The payment appears on Bucky’s phone only after delivery.'
+                    ? 'Bucky asks the trading app for a deposit address for one Bitcoin through Tuna Core. After the address arrives, click Send one Bitcoin. The app monitors its deposit address, waits for the Bitcoin confirmation, then sends 100 Tuna through Core. The payment appears on Bucky’s phone only after delivery.'
                     : 'Three kinds of requests, all addressed to Ty: one coin only; the payload Hello, Ty alone with no amount shown; or one coin with that payload.'
 
   return (
@@ -188,7 +188,7 @@ export function ArchitectureScenes({
       {visual === 'architecture-ping-pong' && <PingPongScene paused={paused} />}
       {visual === 'architecture-bacoin-core' && (
         <div className="architecture-first-core">
-          <CoreServer currency="bacoin" />
+          <CoreServer currency="tuna" />
         </div>
       )}
       {visual === 'architecture-guessing-game' && <GuessingGameScene />}

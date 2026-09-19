@@ -6,7 +6,7 @@ export function ServerIllustration({
   currency = 'bonsai',
 }: {
   connected?: boolean
-  currency?: 'bonsai' | 'bacoin' | 'bitcoin'
+  currency?: 'bonsai' | 'tuna' | 'bitcoin'
 }) {
   const id = useId()
   const front = `${id}-front`

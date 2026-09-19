@@ -1,6 +1,6 @@
 import { useId } from 'react'
 import { BonsaiArtwork } from './BonsaiArtwork'
-import { BacoinArtwork } from './BacoinArtwork'
+import { TunaArtwork } from './TunaArtwork'
 import { BitcoinArtwork } from './BitcoinArtwork'
 import './coin-artwork.css'
 
@@ -37,12 +37,15 @@ export function Coin({
   size = 180,
   label,
 }: {
-  kind: 'bonsai' | 'bacoin' | 'bitcoin'
+  kind: 'bonsai' | 'tuna' | 'bitcoin'
   size?: number
   label?: string
 }) {
   const id = useId()
-  const [light, mid, shade, ink] = ['#fff1aa', '#e7b650', '#a77422', '#725023']
+  const [light, mid, shade, ink] =
+    kind === 'tuna'
+      ? ['#f5f8fb', '#c1cbd4', '#788997', '#435663']
+      : ['#fff1aa', '#e7b650', '#a77422', '#725023']
   return (
     <div
       className={`vision-coin coin-${kind} coin-illustrated`}
@@ -152,9 +155,9 @@ export function Coin({
             <path d="m124 207 4-5 4 5-4 5Z" fill={ink} opacity=".55" />
           </>
         )}
-        {kind === 'bacoin' && (
+        {kind === 'tuna' && (
           <g transform="translate(31 27)">
-            <BacoinArtwork size={194} />
+            <TunaArtwork size={194} />
           </g>
         )}
         {kind === 'bitcoin' && (

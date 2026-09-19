@@ -112,11 +112,11 @@ export const chapter01: Chapter = {
     },
     {
       id: 'architecture-bacoin-core',
-      title: 'Bacoin Core.',
+      title: 'Tuna Core.',
       sentence:
-        'Bacoin Core introduces the currency server used by the next application example.',
+        'Tuna Core introduces the currency server used by the next application example.',
       talkingPoints: [
-        'This server is Bacoin Core, identified by its name and Bacoin coin emblem.',
+        'This server is Tuna Core, identified by its name and Tuna coin emblem.',
         'Begin with the server alone before introducing the phone, application, and their balances.',
         'The next example uses this Core server to carry a paid guess and the app’s response.',
       ],
@@ -126,9 +126,9 @@ export const chapter01: Chapter = {
       id: 'architecture-guessing-game',
       title: 'Guess a number.',
       sentence:
-        'Send one Bacoin with a guess, then receive the guessing app’s result through Core.',
+        'Send one Tuna with a guess, then receive the guessing app’s result through Core.',
       talkingPoints: [
-        'Send one Bacoin with a guess from 1 to 10; this demonstration’s winning number is always 5.',
+        'Send one Tuna with a guess from 1 to 10; this demonstration’s winning number is always 5.',
         'Core first records Bucky 99 and App 101; the laptop decides after receiving the guess.',
         '“You win” returns 10, producing 109/91; “You lose” returns only data, leaving 99/101.',
         'The phone reveals the result after delivery; fees are omitted from this illustrative accounting.',
@@ -139,9 +139,9 @@ export const chapter01: Chapter = {
       id: 'architecture-bitcoin-buy',
       title: 'Buy Bitcoin.',
       sentence:
-        'Pay the trading app through Bacoin Core, then receive Bitcoin from the app’s wallet on the Bitcoin network.',
+        'Pay the trading app through Tuna Core, then receive Bitcoin from the app’s wallet on the Bitcoin network.',
       talkingPoints: [
-        'At the illustrative rate of 100 Bacoin for 1 BTC, Bucky sends payment and receiving address together.',
+        'At the illustrative rate of 100 Tuna for 1 BTC, Bucky sends payment and receiving address together.',
         'Core records Bucky 0 and App 200 before the trading app receives the purchase request.',
         'The app’s wallet sends one Bitcoin; Bucky’s receipt follows the simulated confirmation on the Bitcoin network.',
         'The addresses are placeholders; fees are omitted, and the confirmation animation promises no real threshold or timing.',
@@ -152,11 +152,11 @@ export const chapter01: Chapter = {
       id: 'architecture-bitcoin-sell',
       title: 'Sell Bitcoin.',
       sentence:
-        'Request a deposit address, send Bitcoin, then receive Bacoin after the trading app confirms the deposit.',
+        'Request a deposit address, send Bitcoin, then receive Tuna after the trading app confirms the deposit.',
       talkingPoints: [
-        'Request the app’s deposit address through Core; this message moves no Bacoin in the simplified example.',
+        'Request the app’s deposit address through Core; this message moves no Tuna in the simplified example.',
         'After the address arrives, click Send 1 BTC separately; the app monitors its wallet for the deposit.',
-        'Only confirmed receipt triggers the app’s 100-Bacoin payment; Core records 100/100 before the phone receives it.',
+        'Only confirmed receipt triggers the app’s 100-Tuna payment; Core records 100/100 before the phone receives it.',
         'This independent demonstration uses a fixed example rate, placeholder addresses, omitted fees, and simulated Bitcoin confirmation.',
       ],
       visual: 'architecture-bitcoin-sell',

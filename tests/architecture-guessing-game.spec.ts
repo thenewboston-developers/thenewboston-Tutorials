@@ -71,7 +71,7 @@ async function expectComplete(page: Page, guess: number) {
       '+10',
     )
     await expect(demo(page).getByTestId('game-coin-received')).toContainText(
-      'Bacoin',
+      'Tuna',
     )
   } else {
     await expect(demo(page).getByTestId('game-coin-received')).toHaveCount(0)
@@ -88,12 +88,12 @@ async function replay(page: Page) {
   await expectFresh(page)
 }
 
-test('slide 9 introduces standalone Bacoin Core without a form or account table', async ({
+test('slide 9 introduces standalone Tuna Core without a form or account table', async ({
   page,
 }) => {
   await page.goto(`${chapterPath}/9`)
   const scene = page.locator('.architecture-scene')
-  await expect(scene.getByText('Bacoin Core', { exact: true })).toBeVisible()
+  await expect(scene.getByText('Tuna Core', { exact: true })).toBeVisible()
   await expect(scene).not.toContainText('Bonsai Core')
   await expect(scene.getByRole('table')).toHaveCount(0)
   await expect(scene.locator('input, textarea, button')).toHaveCount(0)
@@ -111,12 +111,12 @@ for (const reducedMotion of ['no-preference', 'reduce'] as const) {
       await expectFresh(page)
       await expect(
         demo(page).getByRole('table', {
-          name: 'Bacoin Core account balances',
+          name: 'Tuna Core account balances',
           exact: true,
         }),
       ).toBeVisible()
       await expect(
-        demo(page).getByText('Bacoin Core', { exact: true }),
+        demo(page).getByText('Tuna Core', { exact: true }),
       ).toBeVisible()
       await expect(
         demo(page).getByLabel('Recipient on Bucky’s phone', { exact: true }),
@@ -234,7 +234,7 @@ for (const reducedMotion of ['no-preference', 'reduce'] as const) {
           .getByRole('button', { name: 'Previous slide', exact: true })
           .click()
         await expect(page.locator('.architecture-scene')).toContainText(
-          'Bacoin Core',
+          'Tuna Core',
         )
         await expect(page.getByTestId('guessing-game-demo')).toHaveCount(0)
         await page

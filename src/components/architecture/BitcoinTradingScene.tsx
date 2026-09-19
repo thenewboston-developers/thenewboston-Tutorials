@@ -45,7 +45,7 @@ const wires = {
 type Trip = {
   wire: keyof typeof wires
   reverse?: boolean
-  currency?: 'bacoin' | 'bitcoin'
+  currency?: 'tuna' | 'bitcoin'
   amount?: number
   title?: string
   payload: string
@@ -53,13 +53,13 @@ type Trip = {
 const trips: Partial<Record<Phase, Trip>> = {
   'payment-to-core': {
     wire: 'corePhone',
-    currency: 'bacoin',
+    currency: 'tuna',
     amount: price,
     payload: receivingAddress,
   },
   'payment-to-app': {
     wire: 'coreApp',
-    currency: 'bacoin',
+    currency: 'tuna',
     amount: price,
     payload: receivingAddress,
   },
@@ -112,14 +112,14 @@ const trips: Partial<Record<Phase, Trip>> = {
   'payout-to-core': {
     wire: 'coreApp',
     reverse: true,
-    currency: 'bacoin',
+    currency: 'tuna',
     amount: price,
     payload: 'Bitcoin received',
   },
   'payout-to-phone': {
     wire: 'corePhone',
     reverse: true,
-    currency: 'bacoin',
+    currency: 'tuna',
     amount: price,
     payload: 'Bitcoin received',
   },
@@ -140,7 +140,7 @@ function TradeBalances({ mode, settled }: { mode: Mode; settled: boolean }) {
     <div className="architecture-coins-data-records" aria-live="polite">
       <table
         className="architecture-accounts"
-        aria-label="Bacoin Core account balances"
+        aria-label="Tuna Core account balances"
       >
         <thead>
           <tr>
@@ -205,7 +205,7 @@ export function BitcoinTradingScene({ mode }: { mode: Mode }) {
   const index = sequence.indexOf(phase)
   const reached = (milestone: Phase) => index >= sequence.indexOf(milestone)
   const complete = phase === 'complete'
-  const bacoinSettled = reached(buying ? 'payment-to-app' : 'payout-to-phone')
+  const tunaSettled = reached(buying ? 'payment-to-app' : 'payout-to-phone')
   const bitcoinSettled = reached(buying ? 'bitcoin-to-phone' : 'deposit-to-app')
   const addressReady = !buying && reached('awaiting-bitcoin')
   const monitoring = !buying && reached('address-to-core')
@@ -254,7 +254,7 @@ export function BitcoinTradingScene({ mode }: { mode: Mode }) {
         ? 'Sending 1 BTC'
         : 'Awaiting payment'
     : depositReceived
-      ? 'Paying 100 Bacoin'
+      ? 'Paying 100 Tuna'
       : monitoring
         ? 'Awaiting 1 BTC'
         : 'Awaiting request'
@@ -277,9 +277,9 @@ export function BitcoinTradingScene({ mode }: { mode: Mode }) {
         <path className="architecture-bitcoin-wire" d={wires.bitcoinApp} />
       </svg>
       <div className="architecture-chat-core">
-        <CoreServer currency="bacoin" connected />
+        <CoreServer currency="tuna" connected />
       </div>
-      <TradeBalances mode={mode} settled={bacoinSettled} />
+      <TradeBalances mode={mode} settled={tunaSettled} />
       <div
         className={`architecture-trade-node${phase === 'confirming' ? ' architecture-trade-node-confirming' : ''}`}
       >
@@ -353,8 +353,8 @@ export function BitcoinTradingScene({ mode }: { mode: Mode }) {
               >
                 <span>{buying ? 'Bitcoin received' : 'Payment received'}</span>
                 <strong>
-                  <Coin kind={buying ? 'bitcoin' : 'bacoin'} size={64} />
-                  {buying ? '+1 BTC' : '+100 Bacoin'}
+                  <Coin kind={buying ? 'bitcoin' : 'tuna'} size={64} />
+                  {buying ? '+1 BTC' : '+100 Tuna'}
                 </strong>
               </div>
             ) : !buying && phase === 'awaiting-bitcoin' ? (
@@ -388,7 +388,7 @@ export function BitcoinTradingScene({ mode }: { mode: Mode }) {
                   : 'Request address'}
             </span>
             {buying ? (
-              <Coin kind="bacoin" size={50} />
+              <Coin kind="tuna" size={50} />
             ) : addressReady ? (
               <Coin kind="bitcoin" size={50} />
             ) : (
@@ -406,7 +406,7 @@ export function BitcoinTradingScene({ mode }: { mode: Mode }) {
         >
           <div
             className="architecture-trade-rate"
-            aria-label="Example exchange rate: 100 Bacoin for 1 Bitcoin"
+            aria-label="Example exchange rate: 100 Tuna for 1 Bitcoin"
           >
             <span>
               <Coin kind="bitcoin" size={57} />
@@ -414,7 +414,7 @@ export function BitcoinTradingScene({ mode }: { mode: Mode }) {
             </span>
             <span className="architecture-trade-equals">=</span>
             <span>
-              <Coin kind="bacoin" size={57} />
+              <Coin kind="tuna" size={57} />
               <strong>100</strong>
             </span>
           </div>

@@ -99,7 +99,7 @@ async function complete(page: Page, mode: Mode) {
   )
   await expect(receipt(page)).toBeVisible()
   await expect(receipt(page)).toContainText(
-    mode === 'buy' ? /\+1\s*BTC/ : /\+100\s*Bacoin/,
+    mode === 'buy' ? /\+1\s*BTC/ : /\+100\s*Tuna/,
   )
   await expect(
     action(page, mode === 'buy' ? 'Buy 1 BTC' : 'Send 1 BTC'),
@@ -123,7 +123,7 @@ async function fastAddress(page: Page) {
 }
 
 for (const reducedMotion of ['no-preference', 'reduce'] as const) {
-  test(`buy pays Bacoin before Bitcoin confirmation and reveals the receipt only at the phone (${reducedMotion})`, async ({
+  test(`buy pays Tuna before Bitcoin confirmation and reveals the receipt only at the phone (${reducedMotion})`, async ({
     page,
   }) => {
     await page.emulateMedia({ reducedMotion })
